@@ -5,12 +5,14 @@
  *      Author: Mebius
  */
 #include "balance.h"
-#define DIN_ON      gpio_init(Nsleep, GPO, GPIO_HIGH, GPO_PUSH_PULL);       // 启动（刹车线）
-#define DIN_OFF     gpio_init(Nsleep, GPO, GPIO_LOW, GPO_PUSH_PULL);       // 停止（刹车线）
+
+#define MOTORA_OFF        gpio_init(stop1, GPO, GPIO_LOW, GPO_PUSH_PULL);       // 停止（刹车线）
+#define MOTORB_OFF        gpio_init(stop2, GPO, GPIO_LOW, GPO_PUSH_PULL);       // 停止（刹车线）
+#define MOTORA_ON         gpio_init(stop1, GPO, GPIO_HIGH, GPO_PUSH_PULL);       // 停止（刹车线）
+#define MOTORB_ON         gpio_init(stop2, GPO, GPIO_HIGH, GPO_PUSH_PULL);       // 停止（刹车线）
 
 unsigned char  Start_Flag=0;                    //启动标志
 unsigned char  show_flag=0;                     //显示标志
-unsigned char  delay_30,delay_flag;             //30毫秒标志
 
 // Status_car status_car = idle;                   //小车状态 一开始为空闲状态
 // Element element = nothing;                      //赛道元素 一开始为默认
@@ -62,11 +64,11 @@ void Balance(void)
     static int num;
 /*****************基本信息采集***************************************************************************/
     Encoder_A = encoder_get_count(TIM5_ENCOEDER_CH1_P10_3);   //左电机 母板上编码器1，小车前进为负值
-        Encoder_B = encoder_get_count(TIM4_ENCOEDER_CH1_P02_8);   //右电机 母板上编码器2，小车前进为正值
-    #ifndef cascade_pid           //串级PID的速度检测在pid函数中
-        Encoder_C = encoder_get_count(TIM6_ENCOEDER_CH1_P20_3);   //行进电机 母板上编码器3，小车前进为正值
-    #endif
-        Encoder_C_Sum += Encoder_C;                     //行进电机编码器累加
+    Encoder_B = encoder_get_count(TIM4_ENCOEDER_CH1_P02_8);   //右电机 母板上编码器2，小车前进为正值
+#ifndef cascade_pid           //串级PID的速度检测在pid函数中
+    Encoder_C = encoder_get_count(TIM6_ENCOEDER_CH1_P20_3);   //行进电机 母板上编码器3，小车前进为正值
+#endif
+    Encoder_C_Sum += Encoder_C;                     //行进电机编码器累加
 
     getKalmanPosition(&Pitch,&Roll,&Yaw,&gyrox,&gyroy,&gyroz);//获取姿态信息
 
@@ -80,14 +82,14 @@ void Balance(void)
     Motor_C = R_Cascade_Pid_Ctrl(Roll_Zero);
 #else
     PWMC_accel = Velocity_Control_C(Encoder_C);                             //C电机速度环正反馈
-    // Motor_C = -P_balance_Control(Roll, Roll_Zero, gyro[1]) + PWMC_accel;    //C电机控制前后倾角
+    Motor_C = -P_balance_Control(Roll, Roll_Zero, gyroz) + PWMC_accel;    //C电机控制前后倾角
 #endif
 
 /*************************保护与限幅******************************************************************************************************************************/
     Roll_error = Roll - Roll_Zero;
     Pitch_error = Pitch - Pitch_Zero;
     //超过特定角度停止运行
-    if(fabs(Roll_error)>20 || fabs(Pitch_error)>15){ Motor_A =0,Motor_B =0,Motor_C =0,Start_Flag=0;DIN_OFF;}
+    if(fabs(Roll_error)>20 || fabs(Pitch_error)>15){ Motor_A =0,Motor_B =0,Motor_C =0,Start_Flag=0;MOTORA_OFF;MOTORB_OFF;}
     Motor_A = constrain_short(Motor_A, -10000, 10000);                     //PWM限幅
     Motor_B = constrain_short(Motor_B, -10000, 10000);                     //PWM限幅
     if(Motor_C>0) Motor_C = Motor_C + 120;
@@ -97,26 +99,24 @@ void Balance(void)
 /************************电机控制****************************************************************************************************************************/
     if(Start_Flag==0)
     {
-        DIN_OFF;                                        //刹车
+        MOTORA_OFF;
+        MOTORB_OFF;                                       //刹车
         MotorCtrl3W(0,0,0);                             //飞轮 独轮都停止
     }
     else if(Start_Flag==1)
     {
-        DIN_OFF;                                        //刹车
+        MOTORA_OFF;
+        MOTORB_OFF;                                       //刹车
         MotorCtrl3W(0,0,Motor_C);                       //飞轮刹车 独轮启动
     }
     else if(Start_Flag==2)
     {
-        DIN_ON;                                         //启动
+        MOTORA_ON;
+        MOTORB_ON;                                       //刹车
         MotorCtrl3W(Motor_A, Motor_B, Motor_C);         //飞轮 独轮都启动
     }
-    if(delay_flag==1)
-    {
-        if(++delay_30==6)   delay_30=0,delay_flag=0;    //给主函数提供30ms的精准延时
-    }
 
-    // pwm_set_duty(PWM_CH1,Motor_A);
-    // pwm_set_duty(PWM_CH2,Motor_A);
+
     // printf("%f\n",Motor_A);
 }
 

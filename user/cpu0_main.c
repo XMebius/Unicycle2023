@@ -12,15 +12,10 @@ void device_init()
     /*初始化三个轮的转动方向GPIO*/
     gpio_init(dir1, GPO, GPIO_LOW, GPO_PUSH_PULL);
     gpio_init(dir2, GPO, GPIO_LOW, GPO_PUSH_PULL);
-
-
-
-
     gpio_init(dir3, GPO, GPIO_LOW, GPO_PUSH_PULL);
 //    gpio_init(PWM_CH3, GPO, GPIO_HIGH, GPO_PUSH_PULL);
-    pwm_init(PWM_CH3, 17000, 8000);
-    pwm_set_duty(PWM_CH3, 500);
-    gpio_init(Nsleep, GPO, GPIO_HIGH, GPO_PUSH_PULL);
+    // pwm_set_duty(PWM_CH3, 500);
+    // gpio_init(Nsleep, GPO, GPIO_HIGH, GPO_PUSH_PULL);
 
 
     /*初始化动量轮状态*/
@@ -48,15 +43,17 @@ void device_init()
     /*初始化PWM波通道*/
     pwm_init(PWM_CH1, 17000, 8000);
     pwm_init(PWM_CH2, 17000, 8000);
-//    pwm_init(PWM_CH3, 17000, 8000);
-    pwm_set_duty(PWM_CH1, 10000);
-    pwm_set_duty(PWM_CH2, 10000);
+    pwm_init(PWM_CH3, 17000, 8000);
+
+// //    pwm_init(PWM_CH3, 17000, 8000);
+//     pwm_set_duty(PWM_CH1, 10000);
+//     pwm_set_duty(PWM_CH2, 10000);
 
 
     /*初始化定时器中断*/
     pit_ms_init(PIT0,100);
-    pit_ms_init(PIT1,100);
-//
+    pit_us_init(PIT1,5000);     // 5ms
+
 //    /*初始化串口接收中断*/
     uart_init(UART_2,115200,WIRELESS_UART_RX_PIN,WIRELESS_UART_TX_PIN);
     uart_rx_interrupt(UART_2,1);
@@ -69,7 +66,7 @@ int core0_main(void)
     device_init();
     cpu_wait_event_ready();         // 等待所有核心初始化完毕
 	while (TRUE) {
-       system_delay_ms(10);
+
 	}
 }
 

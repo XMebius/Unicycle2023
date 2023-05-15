@@ -1,0 +1,3620 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc1796a --dep-file=libraries/zf_common/zf_common_fifo.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc26xb -D__CPU_TC26XB__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc26xb -IY:\\\\Unicycle\\\\ReUnicycle -IY:\\\\Unicycle\\\\ReUnicycle\\\\code -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Configurations -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Infra -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Infra\\\\Platform -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Infra\\\\Platform\\\\Tricore -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Infra\\\\Sfr -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Infra\\\\Sfr\\\\TC26B -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Infra\\\\Sfr\\\\TC26B\\\\_Reg -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\If -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\If\\\\Ccu6If -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\General -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Math -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Time -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Asclin -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Asclin\\\\Asc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Asclin\\\\Lin -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Asclin\\\\Spi -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Asclin\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6 -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6\\\\Icu -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6\\\\PwmBc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6\\\\PwmHl -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6\\\\TPwm -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6\\\\Timer -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Ccu6\\\\TimerWithTrigger -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cif -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cif\\\\Cam -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cif\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cpu -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cpu\\\\CStart -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cpu\\\\Irq -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cpu\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cpu\\\\Trap -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dma -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dma\\\\Dma -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dma\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dsadc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dsadc\\\\Dsadc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dsadc\\\\Rdc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dsadc\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dts -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dts\\\\Dts -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Dts\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Emem -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Emem\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Eray -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Eray\\\\Eray -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Eray\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Eth -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Eth\\\\Phy_Pef7071 -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Eth\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Fce -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Fce\\\\Crc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Fce\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Fft -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Fft\\\\Fft -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Fft\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Flash -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Flash\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gpt12 -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gpt12\\\\IncrEnc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gpt12\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Atom -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Atom\\\\Pwm -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Atom\\\\PwmHl -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Atom\\\\Timer -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Tim -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Tim\\\\In -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Tom -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Tom\\\\PwmHl -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Tom\\\\Timer -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Gtm\\\\Trig -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Hssl -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Hssl\\\\Hssl -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Hssl\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\I2c -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\I2c\\\\I2c -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\I2c\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Iom -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Iom\\\\Driver -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Iom\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Msc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Msc\\\\Msc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Msc\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Mtu -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Mtu\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Multican -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Multican\\\\Can -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Multican\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Port -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Port\\\\Io -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Port\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Psi5 -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Psi5\\\\Psi5 -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Psi5\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Psi5s -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Psi5s\\\\Psi5s -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Psi5s\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Qspi -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Qspi\\\\SpiMaster -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Qspi\\\\SpiSlave -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Qspi\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Scu -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Scu\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Sent -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Sent\\\\Sent -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Sent\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Smu -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Smu\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Src -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Src\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Stm -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Stm\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Stm\\\\Timer -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Vadc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Vadc\\\\Adc -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Vadc\\\\Std -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\_Impl -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\_Lib -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\_Lib\\\\DataHandling -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\_Lib\\\\InternalMux -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\_PinMap -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\zf_common -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\zf_device -IY:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\zf_driver -IY:\\\\Unicycle\\\\ReUnicycle\\\\user -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2012 -o libraries/zf_common/zf_common_fifo.src ../libraries/zf_common/zf_common_fifo.c"
+	.compiler_name		"ctc"
+	;source	'../libraries/zf_common/zf_common_fifo.c'
+
+	
+$TC16X
+	
+	.sdecl	'.text.zf_common_fifo.fifo_head_offset',code,cluster('fifo_head_offset')
+	.sect	'.text.zf_common_fifo.fifo_head_offset'
+	.align	2
+	
+; Function fifo_head_offset
+.L124:
+fifo_head_offset:	.type	func
+	ld.w	d15,[a4]8
+.L703:
+	add	d15,d4
+	st.w	[a4]8,d15
+.L704:
+	j	.L2
+.L3:
+	ld.w	d15,[a4]8
+.L705:
+	ld.w	d0,[a4]20
+.L706:
+	sub	d15,d0
+	st.w	[a4]8,d15
+.L2:
+	ld.w	d15,[a4]20
+.L707:
+	ld.w	d0,[a4]8
+.L708:
+	jge.u	d0,d15,.L3
+.L709:
+	ret
+.L244:
+	
+__fifo_head_offset_function_end:
+	.size	fifo_head_offset,__fifo_head_offset_function_end-fifo_head_offset
+.L191:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_end_offset',code,cluster('fifo_end_offset')
+	.sect	'.text.zf_common_fifo.fifo_end_offset'
+	.align	2
+	
+; Function fifo_end_offset
+.L126:
+fifo_end_offset:	.type	func
+	ld.w	d15,[a4]12
+.L714:
+	add	d15,d4
+	st.w	[a4]12,d15
+.L715:
+	j	.L4
+.L5:
+	ld.w	d15,[a4]12
+.L716:
+	ld.w	d0,[a4]20
+.L717:
+	sub	d15,d0
+	st.w	[a4]12,d15
+.L4:
+	ld.w	d15,[a4]20
+.L718:
+	ld.w	d0,[a4]12
+.L719:
+	jge.u	d0,d15,.L5
+.L720:
+	ret
+.L247:
+	
+__fifo_end_offset_function_end:
+	.size	fifo_end_offset,__fifo_end_offset_function_end-fifo_end_offset
+.L196:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_clear',code,cluster('fifo_clear')
+	.sect	'.text.zf_common_fifo.fifo_clear'
+	.align	2
+	
+	.global	fifo_clear
+; Function fifo_clear
+.L128:
+fifo_clear:	.type	func
+	mov.aa	a15,a4
+.L251:
+	mov	d8,#0
+.L6:
+	ld.bu	d15,[a15]
+.L364:
+	jz.t	d15:0,.L7
+.L365:
+	mov	d8,#2
+.L366:
+	j	.L8
+.L7:
+	ld.bu	d15,[a15]
+.L367:
+	or	d15,#1
+	st.b	[a15],d15
+.L368:
+	mov	d15,#0
+.L369:
+	st.w	[a15]8,d15
+.L370:
+	mov	d15,#0
+.L371:
+	st.w	[a15]12,d15
+.L372:
+	ld.w	d15,[a15]20
+.L373:
+	st.w	[a15]16,d15
+.L374:
+	ld.bu	d15,[a15]1
+.L375:
+	mov	d0,#0
+	jeq	d15,d0,.L9
+.L376:
+	mov	d0,#1
+	jeq	d15,d0,.L10
+.L377:
+	mov	d0,#2
+	jeq	d15,d0,.L11
+	j	.L12
+.L9:
+	ld.a	a4,[a15]4
+.L250:
+	mov	d4,#0
+.L378:
+	ld.w	d5,[a15]20
+	call	memset
+.L379:
+	j	.L13
+.L10:
+	ld.a	a4,[a15]4
+.L252:
+	mov	d4,#0
+.L380:
+	ld.w	d15,[a15]20
+.L381:
+	mul	d5,d15,#2
+	call	memset
+.L382:
+	j	.L14
+.L11:
+	ld.a	a4,[a15]4
+.L253:
+	mov	d4,#0
+.L383:
+	ld.w	d15,[a15]20
+.L384:
+	mul	d5,d15,#4
+	call	memset
+.L385:
+	j	.L15
+.L12:
+.L15:
+.L14:
+.L13:
+	ld.bu	d15,[a15]
+.L386:
+	insert	d15,d15,#0,#0,#1
+	st.b	[a15],d15
+.L8:
+	mov	d2,d8
+.L254:
+	j	.L16
+.L16:
+	ret
+.L198:
+	
+__fifo_clear_function_end:
+	.size	fifo_clear,__fifo_clear_function_end-fifo_clear
+.L151:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_used',code,cluster('fifo_used')
+	.sect	'.text.zf_common_fifo.fifo_used'
+	.align	2
+	
+	.global	fifo_used
+; Function fifo_used
+.L130:
+fifo_used:	.type	func
+	ld.w	d15,[a4]20
+.L391:
+	ld.w	d0,[a4]16
+.L392:
+	sub	d2,d15,d0
+.L393:
+	j	.L17
+.L17:
+	ret
+.L203:
+	
+__fifo_used_function_end:
+	.size	fifo_used,__fifo_used_function_end-fifo_used
+.L156:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_write_element',code,cluster('fifo_write_element')
+	.sect	'.text.zf_common_fifo.fifo_write_element'
+	.align	2
+	
+	.global	fifo_write_element
+; Function fifo_write_element
+.L132:
+fifo_write_element:	.type	func
+	mov.aa	a15,a4
+.L257:
+	mov	d8,#0
+.L18:
+	ld.bu	d15,[a15]
+.L398:
+	jz.t	d15:1,.L19
+.L399:
+	mov	d8,#1
+.L400:
+	j	.L20
+.L19:
+	ld.bu	d15,[a15]
+.L401:
+	or	d15,#2
+	st.b	[a15],d15
+.L402:
+	ld.w	d15,[a15]16
+.L403:
+	jlt.u	d15,#1,.L21
+.L404:
+	ld.bu	d15,[a15]1
+.L405:
+	mov	d0,#0
+	jeq	d15,d0,.L22
+.L406:
+	mov	d0,#1
+	jeq	d15,d0,.L23
+.L407:
+	mov	d0,#2
+	jeq	d15,d0,.L24
+	j	.L25
+.L22:
+	ld.a	a2,[a15]4
+.L408:
+	ld.w	d15,[a15]8
+.L409:
+	addsc.a	a2,a2,d15,#0
+.L410:
+	and	d15,d4,#255
+.L411:
+	st.b	[a2],d15
+.L412:
+	j	.L26
+.L23:
+	ld.a	a2,[a15]4
+.L413:
+	ld.w	d15,[a15]8
+.L414:
+	mul	d15,d15,#2
+	addsc.a	a2,a2,d15,#0
+.L415:
+	insert	d15,d4,#0,#16,#16
+.L416:
+	st.h	[a2],d15
+.L417:
+	j	.L27
+.L24:
+	ld.a	a2,[a15]4
+.L418:
+	ld.w	d15,[a15]8
+.L419:
+	mul	d15,d15,#4
+	addsc.a	a2,a2,d15,#0
+.L420:
+	st.w	[a2],d4
+.L421:
+	j	.L28
+.L25:
+.L28:
+.L27:
+.L26:
+	mov	d4,#1
+.L255:
+	mov.aa	a4,a15
+	call	fifo_head_offset
+.L256:
+	ld.w	d15,[a15]16
+.L422:
+	add	d15,#-1
+	st.w	[a15]16,d15
+.L423:
+	j	.L29
+.L21:
+	mov	d8,#4
+.L29:
+	ld.bu	d15,[a15]
+.L424:
+	insert	d15,d15,#0,#1,#1
+	st.b	[a15],d15
+.L20:
+	mov	d2,d8
+.L258:
+	j	.L30
+.L30:
+	ret
+.L205:
+	
+__fifo_write_element_function_end:
+	.size	fifo_write_element,__fifo_write_element_function_end-fifo_write_element
+.L161:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_write_buffer',code,cluster('fifo_write_buffer')
+	.sect	'.text.zf_common_fifo.fifo_write_buffer'
+	.align	2
+	
+	.global	fifo_write_buffer
+; Function fifo_write_buffer
+.L134:
+fifo_write_buffer:	.type	func
+	mov.aa	a15,a4
+.L262:
+	mov.aa	a12,a5
+.L263:
+	mov	d8,d4
+.L264:
+	mov	d9,#0
+.L31:
+	mov.a	a2,#0
+.L429:
+	jne.a	a2,a12,.L32
+.L430:
+	mov	d9,#3
+.L431:
+	j	.L33
+.L32:
+	ld.bu	d15,[a15]
+.L432:
+	jz.t	d15:1,.L34
+.L433:
+	mov	d9,#1
+.L434:
+	j	.L35
+.L34:
+	ld.bu	d15,[a15]
+.L435:
+	or	d15,#2
+	st.b	[a15],d15
+.L436:
+	ld.w	d15,[a15]16
+.L437:
+	jlt.u	d15,d8,.L36
+.L438:
+	ld.w	d15,[a15]20
+.L439:
+	ld.w	d0,[a15]8
+.L440:
+	sub	d10,d15,d0
+.L265:
+	jge.u	d10,d8,.L37
+.L441:
+	ld.bu	d0,[a15]1
+.L442:
+	mov	d15,#0
+	jeq	d15,d0,.L38
+.L443:
+	mov	d1,#1
+	jeq	d1,d0,.L39
+.L444:
+	mov	d15,#2
+	jeq	d15,d0,.L40
+	j	.L41
+.L38:
+	ld.a	a2,[a15]4
+.L445:
+	ld.w	d15,[a15]8
+.L446:
+	addsc.a	a4,a2,d15,#0
+.L260:
+	mov.aa	a5,a12
+	mov	d4,d10
+.L261:
+	call	memcpy
+.L259:
+	mov.aa	a4,a15
+.L266:
+	mov	d4,d10
+.L268:
+	call	fifo_head_offset
+.L267:
+	ld.a	a2,[a15]4
+.L447:
+	ld.w	d15,[a15]8
+.L448:
+	addsc.a	a4,a2,d15,#0
+.L449:
+	addsc.a	a5,a12,d10,#0
+.L450:
+	sub	d4,d8,d10
+	call	memcpy
+.L451:
+	sub	d4,d8,d10
+	mov.aa	a4,a15
+.L269:
+	call	fifo_head_offset
+.L270:
+	j	.L42
+.L39:
+	ld.a	a2,[a15]4
+.L452:
+	ld.w	d15,[a15]8
+.L453:
+	mul	d15,d15,#2
+	addsc.a	a4,a2,d15,#0
+.L272:
+	mul	d4,d10,#2
+.L273:
+	mov.aa	a5,a12
+	call	memcpy
+.L271:
+	mov.aa	a4,a15
+.L274:
+	mov	d4,d10
+.L276:
+	call	fifo_head_offset
+.L275:
+	ld.a	a2,[a15]4
+.L454:
+	ld.w	d15,[a15]8
+.L455:
+	mul	d15,d15,#2
+	addsc.a	a4,a2,d15,#0
+.L456:
+	mul	d15,d10,#2
+	addsc.a	a5,a12,d15,#0
+.L457:
+	sub	d15,d8,d10
+.L458:
+	mul	d4,d15,#2
+	call	memcpy
+.L459:
+	sub	d4,d8,d10
+	mov.aa	a4,a15
+.L277:
+	call	fifo_head_offset
+.L278:
+	j	.L43
+.L40:
+	ld.a	a2,[a15]4
+.L460:
+	ld.w	d15,[a15]8
+.L461:
+	mul	d15,d15,#4
+	addsc.a	a4,a2,d15,#0
+.L280:
+	mul	d4,d10,#4
+.L281:
+	mov.aa	a5,a12
+	call	memcpy
+.L279:
+	mov.aa	a4,a15
+.L282:
+	mov	d4,d10
+.L284:
+	call	fifo_head_offset
+.L283:
+	ld.a	a2,[a15]4
+.L462:
+	ld.w	d15,[a15]8
+.L463:
+	mul	d15,d15,#4
+	addsc.a	a4,a2,d15,#0
+.L464:
+	mul	d15,d10,#4
+	addsc.a	a5,a12,d15,#0
+.L465:
+	sub	d15,d8,d10
+.L466:
+	mul	d4,d15,#4
+	call	memcpy
+.L467:
+	sub	d4,d8,d10
+	mov.aa	a4,a15
+.L285:
+	call	fifo_head_offset
+.L286:
+	j	.L44
+.L41:
+.L44:
+.L43:
+.L42:
+	j	.L45
+.L37:
+	ld.bu	d15,[a15]1
+.L468:
+	mov	d0,#0
+	jeq	d15,d0,.L46
+.L469:
+	mov	d0,#1
+	jeq	d15,d0,.L47
+.L470:
+	mov	d0,#2
+	jeq	d15,d0,.L48
+	j	.L49
+.L46:
+	ld.a	a2,[a15]4
+.L471:
+	ld.w	d15,[a15]8
+.L472:
+	addsc.a	a4,a2,d15,#0
+.L288:
+	mov.aa	a5,a12
+	mov	d4,d8
+	call	memcpy
+.L287:
+	mov.aa	a4,a15
+.L289:
+	mov	d4,d8
+.L291:
+	call	fifo_head_offset
+.L290:
+	j	.L50
+.L47:
+	ld.a	a2,[a15]4
+.L473:
+	ld.w	d15,[a15]8
+.L474:
+	mul	d15,d15,#2
+	addsc.a	a4,a2,d15,#0
+.L293:
+	mul	d4,d8,#2
+.L294:
+	mov.aa	a5,a12
+	call	memcpy
+.L292:
+	mov.aa	a4,a15
+.L295:
+	mov	d4,d8
+.L297:
+	call	fifo_head_offset
+.L296:
+	j	.L51
+.L48:
+	ld.a	a2,[a15]4
+.L475:
+	ld.w	d15,[a15]8
+.L476:
+	mul	d15,d15,#4
+	addsc.a	a4,a2,d15,#0
+.L299:
+	mul	d4,d8,#4
+.L300:
+	mov.aa	a5,a12
+	call	memcpy
+.L298:
+	mov.aa	a4,a15
+.L301:
+	mov	d4,d8
+.L303:
+	call	fifo_head_offset
+.L302:
+	j	.L52
+.L49:
+.L52:
+.L51:
+.L50:
+.L45:
+	ld.w	d15,[a15]16
+.L477:
+	sub	d15,d8
+	st.w	[a15]16,d15
+.L478:
+	j	.L53
+.L36:
+	mov	d9,#4
+.L53:
+	ld.bu	d15,[a15]
+.L479:
+	insert	d15,d15,#0,#1,#1
+	st.b	[a15],d15
+.L35:
+.L33:
+	mov	d2,d9
+.L304:
+	j	.L54
+.L54:
+	ret
+.L209:
+	
+__fifo_write_buffer_function_end:
+	.size	fifo_write_buffer,__fifo_write_buffer_function_end-fifo_write_buffer
+.L166:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_read_element',code,cluster('fifo_read_element')
+	.sect	'.text.zf_common_fifo.fifo_read_element'
+	.align	2
+	
+	.global	fifo_read_element
+; Function fifo_read_element
+.L136:
+fifo_read_element:	.type	func
+	mov.aa	a15,a4
+.L306:
+	mov.aa	a12,a5
+.L307:
+	mov	d8,d4
+.L308:
+	mov	d9,#0
+.L55:
+	mov.a	a2,#0
+.L484:
+	jne.a	a2,a12,.L56
+.L485:
+	mov	d9,#3
+.L486:
+	j	.L57
+.L56:
+	ld.bu	d15,[a15]
+.L487:
+	or	d15,#4
+	st.b	[a15],d15
+.L488:
+	mov.aa	a4,a15
+	call	fifo_used
+.L305:
+	jge.u	d2,#1,.L58
+.L489:
+	mov	d9,#5
+.L58:
+	ld.bu	d15,[a15]1
+.L490:
+	mov	d0,#0
+	jeq	d15,d0,.L59
+.L491:
+	mov	d0,#1
+	jeq	d15,d0,.L60
+.L492:
+	mov	d0,#2
+	jeq	d15,d0,.L61
+	j	.L62
+.L59:
+	ld.a	a2,[a15]4
+.L493:
+	ld.w	d15,[a15]12
+.L494:
+	addsc.a	a2,a2,d15,#0
+	ld.bu	d15,[a2]
+.L495:
+	st.b	[a12],d15
+.L496:
+	j	.L63
+.L60:
+	ld.a	a2,[a15]4
+.L497:
+	ld.w	d15,[a15]12
+.L498:
+	mul	d15,d15,#2
+	addsc.a	a2,a2,d15,#0
+	ld.hu	d15,[a2]0
+.L499:
+	st.h	[a12],d15
+.L500:
+	j	.L64
+.L61:
+	ld.a	a2,[a15]4
+.L501:
+	ld.w	d15,[a15]12
+.L502:
+	mul	d15,d15,#4
+	addsc.a	a2,a2,d15,#0
+	ld.w	d15,[a2]
+.L503:
+	st.w	[a12],d15
+.L504:
+	j	.L65
+.L62:
+.L65:
+.L64:
+.L63:
+	jne	d8,#0,.L66
+.L505:
+	ld.bu	d15,[a15]
+.L506:
+	jz.t	d15:0,.L67
+.L507:
+	mov	d9,#2
+.L508:
+	j	.L68
+.L67:
+	ld.bu	d15,[a15]
+.L509:
+	or	d15,#1
+	st.b	[a15],d15
+.L510:
+	mov	d4,#1
+	mov.aa	a4,a15
+.L309:
+	call	fifo_end_offset
+.L310:
+	ld.w	d15,[a15]16
+.L511:
+	add	d15,#1
+	st.w	[a15]16,d15
+.L512:
+	ld.bu	d15,[a15]
+.L513:
+	insert	d15,d15,#0,#0,#1
+	st.b	[a15],d15
+.L66:
+.L68:
+.L57:
+	ld.bu	d15,[a15]
+.L514:
+	and	d15,#4
+	st.b	[a15],d15
+.L515:
+	mov	d2,d9
+.L311:
+	j	.L69
+.L69:
+	ret
+.L216:
+	
+__fifo_read_element_function_end:
+	.size	fifo_read_element,__fifo_read_element_function_end-fifo_read_element
+.L171:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_read_buffer',code,cluster('fifo_read_buffer')
+	.sect	'.text.zf_common_fifo.fifo_read_buffer'
+	.align	2
+	
+	.global	fifo_read_buffer
+; Function fifo_read_buffer
+.L138:
+fifo_read_buffer:	.type	func
+	mov.aa	a15,a4
+.L313:
+	mov.aa	a12,a5
+.L314:
+	mov.aa	a13,a6
+.L315:
+	mov	d9,d4
+.L316:
+	mov	d10,#0
+.L70:
+	mov.a	a2,#0
+.L520:
+	jne.a	a2,a12,.L71
+.L521:
+	mov	d10,#3
+.L522:
+	j	.L72
+.L71:
+	ld.bu	d15,[a15]
+.L523:
+	or	d15,#4
+	st.b	[a15],d15
+.L524:
+	ld.w	d8,[a13]
+.L525:
+	mov.aa	a4,a15
+	call	fifo_used
+.L312:
+	jge.u	d2,d8,.L73
+.L526:
+	ld.w	d15,[a15]20
+.L527:
+	ld.w	d0,[a15]16
+.L528:
+	sub	d0,d15,d0
+.L529:
+	st.w	[a13],d0
+.L530:
+	mov	d10,#5
+.L73:
+	ld.w	d15,[a15]20
+.L531:
+	ld.w	d0,[a15]12
+.L532:
+	sub	d8,d15,d0
+.L317:
+	ld.w	d0,[a13]
+.L533:
+	jlt.u	d8,d0,.L74
+.L534:
+	ld.bu	d15,[a15]1
+.L535:
+	mov	d0,#0
+	jeq	d15,d0,.L75
+.L536:
+	mov	d0,#1
+	jeq	d15,d0,.L76
+.L537:
+	mov	d0,#2
+	jeq	d15,d0,.L77
+	j	.L78
+.L75:
+	ld.a	a2,[a15]4
+.L538:
+	ld.w	d15,[a15]12
+.L539:
+	addsc.a	a5,a2,d15,#0
+.L540:
+	ld.w	d4,[a13]
+	mov.aa	a4,a12
+.L318:
+	call	memcpy
+.L319:
+	j	.L79
+.L76:
+	ld.a	a2,[a15]4
+.L541:
+	ld.w	d15,[a15]12
+.L542:
+	mul	d15,d15,#2
+	addsc.a	a5,a2,d15,#0
+.L543:
+	ld.w	d15,[a13]
+.L544:
+	mul	d4,d15,#2
+	mov.aa	a4,a12
+.L320:
+	call	memcpy
+.L321:
+	j	.L80
+.L77:
+	ld.a	a2,[a15]4
+.L545:
+	ld.w	d15,[a15]12
+.L546:
+	mul	d15,d15,#4
+	addsc.a	a5,a2,d15,#0
+.L547:
+	ld.w	d15,[a13]
+.L548:
+	mul	d4,d15,#4
+	mov.aa	a4,a12
+.L322:
+	call	memcpy
+.L323:
+	j	.L81
+.L78:
+.L81:
+.L80:
+.L79:
+	j	.L82
+.L74:
+	ld.bu	d15,[a15]1
+.L549:
+	mov	d0,#0
+	jeq	d15,d0,.L83
+.L550:
+	mov	d0,#1
+	jeq	d15,d0,.L84
+.L551:
+	mov	d0,#2
+	jeq	d15,d0,.L85
+	j	.L86
+.L83:
+	ld.a	a2,[a15]4
+.L552:
+	ld.w	d15,[a15]12
+.L553:
+	addsc.a	a5,a2,d15,#0
+.L554:
+	mov.aa	a4,a12
+.L324:
+	mov	d4,d8
+.L326:
+	call	memcpy
+.L325:
+	addsc.a	a4,a12,d8,#0
+.L555:
+	ld.a	a5,[a15]4
+.L556:
+	ld.w	d4,[a13]
+.L557:
+	sub	d4,d8
+	call	memcpy
+.L558:
+	j	.L87
+.L84:
+	ld.a	a2,[a15]4
+.L559:
+	ld.w	d15,[a15]12
+.L560:
+	mul	d15,d15,#2
+	addsc.a	a5,a2,d15,#0
+.L561:
+	mul	d4,d8,#2
+	mov.aa	a4,a12
+.L327:
+	call	memcpy
+.L328:
+	mul	d15,d8,#2
+	addsc.a	a4,a12,d15,#0
+.L562:
+	ld.a	a5,[a15]4
+.L563:
+	ld.w	d15,[a13]
+.L564:
+	sub	d15,d8
+.L565:
+	mul	d4,d15,#2
+	call	memcpy
+.L566:
+	j	.L88
+.L85:
+	ld.a	a2,[a15]4
+.L567:
+	ld.w	d15,[a15]12
+.L568:
+	mul	d15,d15,#4
+	addsc.a	a5,a2,d15,#0
+.L569:
+	mul	d4,d8,#4
+	mov.aa	a4,a12
+.L329:
+	call	memcpy
+.L330:
+	mul	d15,d8,#4
+	addsc.a	a4,a12,d15,#0
+.L570:
+	ld.a	a5,[a15]4
+.L571:
+	ld.w	d15,[a13]
+.L572:
+	sub	d15,d8
+.L573:
+	mul	d4,d15,#4
+	call	memcpy
+.L574:
+	j	.L89
+.L86:
+.L89:
+.L88:
+.L87:
+.L82:
+	jne	d9,#0,.L90
+.L575:
+	ld.bu	d15,[a15]
+.L576:
+	jz.t	d15:0,.L91
+.L577:
+	mov	d10,#2
+.L578:
+	j	.L92
+.L91:
+	ld.bu	d15,[a15]
+.L579:
+	or	d15,#1
+	st.b	[a15],d15
+.L580:
+	ld.w	d4,[a13]
+	mov.aa	a4,a15
+.L331:
+	call	fifo_end_offset
+.L332:
+	ld.w	d15,[a15]16
+.L581:
+	ld.w	d0,[a13]
+.L582:
+	add	d15,d0
+	st.w	[a15]16,d15
+.L583:
+	ld.bu	d15,[a15]
+.L584:
+	insert	d15,d15,#0,#0,#1
+	st.b	[a15],d15
+.L90:
+.L92:
+.L72:
+	ld.bu	d15,[a15]
+.L585:
+	and	d15,#4
+	st.b	[a15],d15
+.L586:
+	mov	d2,d10
+.L333:
+	j	.L93
+.L93:
+	ret
+.L222:
+	
+__fifo_read_buffer_function_end:
+	.size	fifo_read_buffer,__fifo_read_buffer_function_end-fifo_read_buffer
+.L176:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_read_tail_buffer',code,cluster('fifo_read_tail_buffer')
+	.sect	'.text.zf_common_fifo.fifo_read_tail_buffer'
+	.align	2
+	
+	.global	fifo_read_tail_buffer
+; Function fifo_read_tail_buffer
+.L140:
+fifo_read_tail_buffer:	.type	func
+	mov.aa	a15,a4
+.L335:
+	mov.aa	a12,a5
+.L336:
+	mov.aa	a13,a6
+.L337:
+	mov	d9,d4
+.L338:
+	mov	d10,#0
+.L94:
+	mov.a	a2,#0
+.L591:
+	jne.a	a2,a12,.L95
+.L592:
+	mov	d10,#3
+.L593:
+	j	.L96
+.L95:
+	ld.bu	d15,[a15]
+.L594:
+	or	d15,#4
+	st.b	[a15],d15
+.L595:
+	ld.w	d8,[a13]
+.L596:
+	mov.aa	a4,a15
+	call	fifo_used
+.L334:
+	jge.u	d2,d8,.L97
+.L597:
+	ld.w	d15,[a15]20
+.L598:
+	ld.w	d0,[a15]16
+.L599:
+	sub	d0,d15,d0
+.L600:
+	st.w	[a13],d0
+.L601:
+	mov	d10,#5
+.L97:
+	ld.w	d0,[a15]8
+.L602:
+	ld.w	d15,[a15]12
+.L603:
+	jlt.u	d15,d0,.L98
+.L604:
+	ld.w	d15,[a15]8
+.L605:
+	ld.w	d0,[a13]
+.L606:
+	jlt.u	d15,d0,.L99
+.L98:
+	ld.bu	d15,[a15]1
+.L607:
+	mov	d0,#0
+	jeq	d15,d0,.L100
+.L608:
+	mov	d0,#1
+	jeq	d15,d0,.L101
+.L609:
+	mov	d0,#2
+	jeq	d15,d0,.L102
+	j	.L103
+.L100:
+	ld.a	a2,[a15]4
+.L610:
+	ld.w	d15,[a15]8
+.L611:
+	ld.w	d0,[a13]
+.L612:
+	sub	d15,d0
+.L613:
+	addsc.a	a5,a2,d15,#0
+.L614:
+	ld.w	d4,[a13]
+	mov.aa	a4,a12
+.L339:
+	call	memcpy
+.L340:
+	j	.L104
+.L101:
+	ld.a	a2,[a15]4
+.L615:
+	ld.w	d15,[a15]8
+.L616:
+	ld.w	d0,[a13]
+.L617:
+	sub	d15,d0
+.L618:
+	mul	d15,d15,#2
+	addsc.a	a5,a2,d15,#0
+.L619:
+	ld.w	d15,[a13]
+.L620:
+	mul	d4,d15,#2
+	mov.aa	a4,a12
+.L341:
+	call	memcpy
+.L342:
+	j	.L105
+.L102:
+	ld.a	a2,[a15]4
+.L621:
+	ld.w	d15,[a15]8
+.L622:
+	ld.w	d0,[a13]
+.L623:
+	sub	d15,d0
+.L624:
+	mul	d15,d15,#4
+	addsc.a	a5,a2,d15,#0
+.L625:
+	ld.w	d15,[a13]
+.L626:
+	mul	d4,d15,#4
+	mov.aa	a4,a12
+.L343:
+	call	memcpy
+.L344:
+	j	.L106
+.L103:
+.L106:
+.L105:
+.L104:
+	j	.L107
+.L99:
+	ld.w	d8,[a13]
+.L627:
+	ld.w	d15,[a15]8
+.L345:
+	sub	d8,d15
+.L628:
+	ld.bu	d15,[a15]1
+.L629:
+	mov	d0,#0
+	jeq	d15,d0,.L108
+.L630:
+	mov	d0,#1
+	jeq	d15,d0,.L109
+.L631:
+	mov	d0,#2
+	jeq	d15,d0,.L110
+	j	.L111
+.L108:
+	ld.a	a2,[a15]4
+.L632:
+	ld.w	d15,[a15]20
+.L633:
+	sub	d15,d8
+.L634:
+	addsc.a	a5,a2,d15,#0
+.L635:
+	mov.aa	a4,a12
+.L346:
+	mov	d4,d8
+.L348:
+	call	memcpy
+.L347:
+	addsc.a	a4,a12,d8,#0
+.L636:
+	ld.a	a2,[a15]4
+.L637:
+	ld.w	d15,[a15]8
+.L638:
+	ld.w	d0,[a13]
+.L639:
+	sub	d15,d0
+.L640:
+	addsc.a	a5,a2,d15,#0
+.L641:
+	ld.w	d4,[a13]
+.L642:
+	sub	d4,d8
+	call	memcpy
+.L643:
+	j	.L112
+.L109:
+	ld.a	a2,[a15]4
+.L644:
+	ld.w	d15,[a15]20
+.L645:
+	sub	d15,d8
+.L646:
+	mul	d15,d15,#2
+	addsc.a	a5,a2,d15,#0
+.L647:
+	mul	d4,d8,#2
+	mov.aa	a4,a12
+.L349:
+	call	memcpy
+.L350:
+	mul	d15,d8,#2
+	addsc.a	a4,a12,d15,#0
+.L648:
+	ld.a	a2,[a15]4
+.L649:
+	ld.w	d15,[a15]8
+.L650:
+	ld.w	d0,[a13]
+.L651:
+	sub	d15,d0
+.L652:
+	mul	d15,d15,#2
+	addsc.a	a5,a2,d15,#0
+.L653:
+	ld.w	d15,[a13]
+.L654:
+	sub	d15,d8
+.L655:
+	mul	d4,d15,#2
+	call	memcpy
+.L656:
+	j	.L113
+.L110:
+	ld.a	a2,[a15]4
+.L657:
+	ld.w	d15,[a15]20
+.L658:
+	sub	d15,d8
+.L659:
+	mul	d15,d15,#4
+	addsc.a	a5,a2,d15,#0
+.L660:
+	mul	d4,d8,#4
+	mov.aa	a4,a12
+.L351:
+	call	memcpy
+.L352:
+	mul	d15,d8,#4
+	addsc.a	a4,a12,d15,#0
+.L661:
+	ld.a	a2,[a15]4
+.L662:
+	ld.w	d15,[a15]8
+.L663:
+	ld.w	d0,[a13]
+.L664:
+	sub	d15,d0
+.L665:
+	mul	d15,d15,#4
+	addsc.a	a5,a2,d15,#0
+.L666:
+	ld.w	d15,[a13]
+.L667:
+	sub	d15,d8
+.L668:
+	mul	d4,d15,#4
+	call	memcpy
+.L669:
+	j	.L114
+.L111:
+.L114:
+.L113:
+.L112:
+.L107:
+	jne	d9,#0,.L115
+.L670:
+	ld.bu	d15,[a15]
+.L671:
+	jz.t	d15:0,.L116
+.L672:
+	mov	d10,#2
+.L673:
+	j	.L117
+.L116:
+	ld.bu	d15,[a15]
+.L674:
+	or	d15,#1
+	st.b	[a15],d15
+.L675:
+	ld.w	d15,[a15]20
+.L676:
+	ld.w	d0,[a15]16
+.L677:
+	sub	d4,d15,d0
+	mov.aa	a4,a15
+.L353:
+	call	fifo_end_offset
+.L354:
+	ld.w	d15,[a15]20
+.L678:
+	st.w	[a15]16,d15
+.L679:
+	ld.bu	d15,[a15]
+.L680:
+	insert	d15,d15,#0,#0,#1
+	st.b	[a15],d15
+.L115:
+.L117:
+.L96:
+	ld.bu	d15,[a15]
+.L681:
+	and	d15,#4
+	st.b	[a15],d15
+.L682:
+	mov	d2,d10
+.L355:
+	j	.L118
+.L118:
+	ret
+.L230:
+	
+__fifo_read_tail_buffer_function_end:
+	.size	fifo_read_tail_buffer,__fifo_read_tail_buffer_function_end-fifo_read_tail_buffer
+.L181:
+	; End of function
+	
+	.sdecl	'.text.zf_common_fifo.fifo_init',code,cluster('fifo_init')
+	.sect	'.text.zf_common_fifo.fifo_init'
+	.align	2
+	
+	.global	fifo_init
+; Function fifo_init
+.L142:
+fifo_init:	.type	func
+	mov	d2,#0
+.L119:
+	mov.a	a15,#0
+.L687:
+	jne.a	a15,a5,.L120
+.L688:
+	mov	d2,#3
+.L689:
+	j	.L121
+.L120:
+	st.a	[a4]4,a5
+.L690:
+	mov	d15,#0
+.L691:
+	st.b	[a4],d15
+.L692:
+	st.b	[a4]1,d4
+.L693:
+	mov	d15,#0
+.L694:
+	st.w	[a4]8,d15
+.L695:
+	mov	d15,#0
+.L696:
+	st.w	[a4]12,d15
+.L697:
+	st.w	[a4]16,d5
+.L698:
+	st.w	[a4]20,d5
+.L121:
+	j	.L122
+.L122:
+	ret
+.L237:
+	
+__fifo_init_function_end:
+	.size	fifo_init,__fifo_init_function_end-fifo_init
+.L186:
+	; End of function
+	
+	.calls	'fifo_clear','memset'
+	.calls	'fifo_write_element','fifo_head_offset'
+	.calls	'fifo_write_buffer','memcpy'
+	.calls	'fifo_write_buffer','fifo_head_offset'
+	.calls	'fifo_read_element','fifo_used'
+	.calls	'fifo_read_element','fifo_end_offset'
+	.calls	'fifo_read_buffer','fifo_used'
+	.calls	'fifo_read_buffer','memcpy'
+	.calls	'fifo_read_buffer','fifo_end_offset'
+	.calls	'fifo_read_tail_buffer','fifo_used'
+	.calls	'fifo_read_tail_buffer','memcpy'
+	.calls	'fifo_read_tail_buffer','fifo_end_offset'
+	.calls	'fifo_head_offset','',0
+	.calls	'fifo_end_offset','',0
+	.calls	'fifo_clear','',0
+	.calls	'fifo_used','',0
+	.calls	'fifo_write_element','',0
+	.calls	'fifo_write_buffer','',0
+	.calls	'fifo_read_element','',0
+	.calls	'fifo_read_buffer','',0
+	.calls	'fifo_read_tail_buffer','',0
+	.extern	memcpy
+	.extern	memset
+	.calls	'fifo_init','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L144:
+	.word	1260
+	.half	3
+	.word	.L145
+	.byte	4
+.L143:
+	.byte	1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L146
+	.byte	2
+	.byte	'void',0
+.L211:
+	.byte	3
+	.word	165
+	.byte	4
+	.word	171
+	.byte	5
+	.word	165
+	.byte	3
+	.word	181
+	.byte	4
+	.word	186
+	.byte	6
+	.byte	'unsigned int',0,4,7,7
+	.byte	'memcpy',0,1,53,17
+	.word	171
+	.byte	1,1,1,1,8,1,53,33
+	.word	176
+	.byte	8,1,53,56
+	.word	191
+	.byte	8,1,53,68
+	.word	196
+	.byte	0,6
+	.byte	'int',0,4,5,7
+	.byte	'memset',0,1,56,17
+	.word	171
+	.byte	1,1,1,1,8,1,56,33
+	.word	171
+	.byte	8,1,56,36
+	.word	256
+	.byte	8,1,56,41
+	.word	196
+	.byte	0
+.L197:
+	.byte	9,2,41,9,1,10
+	.byte	'FIFO_SUCCESS',0,0,10
+	.byte	'FIFO_WRITE_UNDO',0,1,10
+	.byte	'FIFO_CLEAR_UNDO',0,2,10
+	.byte	'FIFO_BUFFER_NULL',0,3,10
+	.byte	'FIFO_SPACE_NO_ENOUGH',0,4,10
+	.byte	'FIFO_DATA_NO_ENOUGH',0,5,0,6
+	.byte	'unsigned char',0,1,8
+.L239:
+	.byte	9,2,66,9,1,10
+	.byte	'FIFO_DATA_8BIT',0,0,10
+	.byte	'FIFO_DATA_16BIT',0,1,10
+	.byte	'FIFO_DATA_32BIT',0,2,0
+.L202:
+	.byte	6
+	.byte	'unsigned long int',0,4,7,11,2,73,9,24,12
+	.byte	'execution',0
+	.word	428
+	.byte	1,2,35,0,12
+	.byte	'type',0
+	.word	445
+	.byte	1,2,35,1,12
+	.byte	'buffer',0
+	.word	171
+	.byte	4,2,35,4,12
+	.byte	'head',0
+	.word	504
+	.byte	4,2,35,8,12
+	.byte	'end',0
+	.word	504
+	.byte	4,2,35,12,12
+	.byte	'size',0
+	.word	504
+	.byte	4,2,35,16,12
+	.byte	'max',0
+	.word	504
+	.byte	4,2,35,20,0
+.L199:
+	.byte	3
+	.word	525
+.L219:
+	.byte	9,2,60,9,1,10
+	.byte	'FIFO_READ_AND_CLEAN',0,0,10
+	.byte	'FIFO_READ_ONLY',0,1,0
+.L225:
+	.byte	3
+	.word	504
+	.byte	6
+	.byte	'short int',0,2,5,13
+	.byte	'__wchar_t',0,3,1,1
+	.word	689
+	.byte	13
+	.byte	'__size_t',0,3,1,1
+	.word	196
+	.byte	13
+	.byte	'__ptrdiff_t',0,3,1,1
+	.word	256
+	.byte	14,1,3
+	.word	757
+	.byte	13
+	.byte	'__codeptr',0,3,1,1
+	.word	759
+	.byte	13
+	.byte	'__intptr_t',0,3,1,1
+	.word	256
+	.byte	13
+	.byte	'__uintptr_t',0,3,1,1
+	.word	196
+	.byte	13
+	.byte	'size_t',0,4,31,25
+	.word	196
+	.byte	6
+	.byte	'unsigned short int',0,2,7,13
+	.byte	'_iob_flag_t',0,4,82,25
+	.word	836
+	.byte	13
+	.byte	'uint8',0,5,105,29
+	.word	428
+	.byte	13
+	.byte	'uint16',0,5,109,29
+	.word	836
+	.byte	13
+	.byte	'uint32',0,5,113,29
+	.word	504
+	.byte	6
+	.byte	'unsigned long long int',0,8,7,13
+	.byte	'uint64',0,5,118,29
+	.word	922
+	.byte	13
+	.byte	'sint16',0,5,126,29
+	.word	689
+	.byte	6
+	.byte	'long int',0,4,5,13
+	.byte	'sint32',0,5,131,1,29
+	.word	978
+	.byte	6
+	.byte	'long long int',0,8,5,13
+	.byte	'sint64',0,5,138,1,29
+	.word	1006
+	.byte	6
+	.byte	'float',0,4,4,13
+	.byte	'float32',0,5,167,1,29
+	.word	1039
+	.byte	13
+	.byte	'pvoid',0,6,57,28
+	.word	171
+	.byte	13
+	.byte	'Ifx_TickTime',0,6,79,28
+	.word	1006
+	.byte	6
+	.byte	'char',0,1,6,13
+	.byte	'int8',0,7,54,29
+	.word	1100
+	.byte	13
+	.byte	'int16',0,7,55,29
+	.word	689
+	.byte	13
+	.byte	'int32',0,7,56,29
+	.word	256
+	.byte	13
+	.byte	'int64',0,7,57,29
+	.word	1006
+	.byte	13
+	.byte	'fifo_state_enum',0,2,50,2
+	.word	307
+	.byte	13
+	.byte	'fifo_operation_enum',0,2,64,2
+	.word	639
+	.byte	13
+	.byte	'fifo_data_type_enum',0,2,71,2
+	.word	445
+	.byte	13
+	.byte	'fifo_struct',0,2,82,2
+	.word	525
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L145:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,59,0,3,8,0,0,3,15,0,73,19,0,0,4,55,0,73,19,0,0,5,38,0
+	.byte	73,19,0,0,6,36,0,3,8,11,15,62,15,0,0,7,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,8
+	.byte	5,0,58,15,59,15,57,15,73,19,0,0,9,4,1,58,15,59,15,57,15,11,15,0,0,10,40,0,3,8,28,13,0,0,11,19,1,58,15
+	.byte	59,15,57,15,11,15,0,0,12,13,0,3,8,73,19,11,15,56,9,0,0,13,22,0,3,8,58,15,59,15,57,15,73,19,0,0,14,21,0
+	.byte	54,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L146:
+	.word	.L357-.L356
+.L356:
+	.half	3
+	.word	.L359-.L358
+.L358:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'X:\\Software\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0
+	.byte	'Y:\\\\Unicycle\\\\ReUnicycle\\\\libraries\\\\infineon_libraries\\\\iLLD\\\\TC26B\\\\Tricore\\\\Cpu\\\\Std',0
+	.byte	0
+	.byte	'string.h',0,1,0,0
+	.byte	'..\\libraries\\zf_common\\zf_common_fifo.h',0,0,0,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0
+	.byte	'stdio.h',0,1,0,0
+	.byte	'Platform_Types.h',0,2,0,0
+	.byte	'ifx_types.h',0,2,0,0
+	.byte	'..\\libraries\\zf_common\\zf_common_typedef.h',0,0,0,0,0
+.L359:
+.L357:
+	.sdecl	'.debug_info',debug,cluster('fifo_clear')
+	.sect	'.debug_info'
+.L147:
+	.word	258
+	.half	3
+	.word	.L148
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L150,.L149
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_clear',0,1,81,17
+	.word	.L197
+	.byte	1,1,1
+	.word	.L128,.L198,.L127
+	.byte	4
+	.byte	'fifo',0,1,81,42
+	.word	.L199,.L200
+	.byte	5
+	.word	.L128,.L198
+	.byte	6
+	.byte	'return_state',0,1,83,21
+	.word	.L197,.L201
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_clear')
+	.sect	'.debug_abbrev'
+.L148:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_clear')
+	.sect	'.debug_line'
+.L149:
+	.word	.L361-.L360
+.L360:
+	.half	3
+	.word	.L363-.L362
+.L362:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L363:
+	.byte	5,17,7,0,5,2
+	.word	.L128
+	.byte	3,208,0,1,5,34,9
+	.half	.L251-.L128
+	.byte	3,2,1,5,29,9
+	.half	.L6-.L251
+	.byte	3,3,1,5,9,9
+	.half	.L364-.L6
+	.byte	1,5,26,7,9
+	.half	.L365-.L364
+	.byte	3,2,1,5,13,9
+	.half	.L366-.L365
+	.byte	3,1,1,9
+	.half	.L7-.L366
+	.byte	3,2,1,5,25,9
+	.half	.L367-.L7
+	.byte	1,5,27,9
+	.half	.L368-.L367
+	.byte	3,1,1,5,25,9
+	.half	.L369-.L368
+	.byte	1,5,27,9
+	.half	.L370-.L369
+	.byte	3,1,1,5,25,9
+	.half	.L371-.L370
+	.byte	1,5,31,9
+	.half	.L372-.L371
+	.byte	3,1,1,5,25,9
+	.half	.L373-.L372
+	.byte	1,5,20,9
+	.half	.L374-.L373
+	.byte	3,1,1,5,18,9
+	.half	.L375-.L374
+	.byte	3,2,1,9
+	.half	.L376-.L375
+	.byte	3,3,1,9
+	.half	.L377-.L376
+	.byte	3,3,1,5,28,9
+	.half	.L9-.L377
+	.byte	3,123,1,5,38,9
+	.half	.L250-.L9
+	.byte	1,5,45,9
+	.half	.L378-.L250
+	.byte	1,5,17,9
+	.half	.L379-.L378
+	.byte	3,1,1,5,28,9
+	.half	.L10-.L379
+	.byte	3,2,1,5,38,9
+	.half	.L252-.L10
+	.byte	1,5,45,9
+	.half	.L380-.L252
+	.byte	1,5,51,9
+	.half	.L381-.L380
+	.byte	1,5,17,9
+	.half	.L382-.L381
+	.byte	3,1,1,5,28,9
+	.half	.L11-.L382
+	.byte	3,2,1,5,38,9
+	.half	.L253-.L11
+	.byte	1,5,45,9
+	.half	.L383-.L253
+	.byte	1,5,51,9
+	.half	.L384-.L383
+	.byte	1,5,17,9
+	.half	.L385-.L384
+	.byte	3,1,1,5,13,9
+	.half	.L13-.L385
+	.byte	3,2,1,5,25,9
+	.half	.L386-.L13
+	.byte	1,5,5,9
+	.half	.L8-.L386
+	.byte	3,2,1,5,1,9
+	.half	.L16-.L8
+	.byte	3,1,1,7,9
+	.half	.L151-.L16
+	.byte	0,1,1
+.L361:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_clear')
+	.sect	'.debug_ranges'
+.L150:
+	.word	-1,.L128,0,.L151-.L128,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_used')
+	.sect	'.debug_info'
+.L152:
+	.word	231
+	.half	3
+	.word	.L153
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L155,.L154
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_used',0,1,119,8
+	.word	.L202
+	.byte	1,1,1
+	.word	.L130,.L203,.L129
+	.byte	4
+	.byte	'fifo',0,1,119,32
+	.word	.L199,.L204
+	.byte	5
+	.word	.L130,.L203
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_used')
+	.sect	'.debug_abbrev'
+.L153:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_used')
+	.sect	'.debug_line'
+.L154:
+	.word	.L388-.L387
+.L387:
+	.half	3
+	.word	.L390-.L389
+.L389:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L390:
+	.byte	5,17,7,0,5,2
+	.word	.L130
+	.byte	3,248,0,1,5,29,9
+	.half	.L391-.L130
+	.byte	1,5,23,9
+	.half	.L392-.L391
+	.byte	1,5,5,9
+	.half	.L393-.L392
+	.byte	1,5,1,9
+	.half	.L17-.L393
+	.byte	3,1,1,7,9
+	.half	.L156-.L17
+	.byte	0,1,1
+.L388:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_used')
+	.sect	'.debug_ranges'
+.L155:
+	.word	-1,.L130,0,.L156-.L130,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_write_element')
+	.sect	'.debug_info'
+.L157:
+	.word	286
+	.half	3
+	.word	.L158
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L160,.L159
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_write_element',0,1,132,1,17
+	.word	.L197
+	.byte	1,1,1
+	.word	.L132,.L205,.L131
+	.byte	4
+	.byte	'fifo',0,1,132,1,50
+	.word	.L199,.L206
+	.byte	4
+	.byte	'dat',0,1,132,1,63
+	.word	.L202,.L207
+	.byte	5
+	.word	.L132,.L205
+	.byte	6
+	.byte	'return_state',0,1,134,1,21
+	.word	.L197,.L208
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_write_element')
+	.sect	'.debug_abbrev'
+.L158:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_write_element')
+	.sect	'.debug_line'
+.L159:
+	.word	.L395-.L394
+.L394:
+	.half	3
+	.word	.L397-.L396
+.L396:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L397:
+	.byte	5,17,7,0,5,2
+	.word	.L132
+	.byte	3,131,1,1,5,34,9
+	.half	.L257-.L132
+	.byte	3,2,1,5,29,9
+	.half	.L18-.L257
+	.byte	3,4,1,5,9,9
+	.half	.L398-.L18
+	.byte	1,5,26,7,9
+	.half	.L399-.L398
+	.byte	3,2,1,5,13,9
+	.half	.L400-.L399
+	.byte	3,1,1,9
+	.half	.L19-.L400
+	.byte	3,2,1,5,25,9
+	.half	.L401-.L19
+	.byte	1,5,21,9
+	.half	.L402-.L401
+	.byte	3,2,1,5,9,9
+	.half	.L403-.L402
+	.byte	1,5,24,7,9
+	.half	.L404-.L403
+	.byte	3,2,1,5,22,9
+	.half	.L405-.L404
+	.byte	3,2,1,9
+	.half	.L406-.L405
+	.byte	3,3,1,9
+	.half	.L407-.L406
+	.byte	3,3,1,5,35,9
+	.half	.L22-.L407
+	.byte	3,123,1,5,49,9
+	.half	.L408-.L22
+	.byte	1,5,44,9
+	.half	.L409-.L408
+	.byte	1,5,63,9
+	.half	.L410-.L409
+	.byte	1,5,57,9
+	.half	.L411-.L410
+	.byte	1,5,21,9
+	.half	.L412-.L411
+	.byte	3,1,1,5,36,9
+	.half	.L23-.L412
+	.byte	3,2,1,5,50,9
+	.half	.L413-.L23
+	.byte	1,5,45,9
+	.half	.L414-.L413
+	.byte	1,5,64,9
+	.half	.L415-.L414
+	.byte	1,5,58,9
+	.half	.L416-.L415
+	.byte	1,5,21,9
+	.half	.L417-.L416
+	.byte	3,1,1,5,36,9
+	.half	.L24-.L417
+	.byte	3,2,1,5,50,9
+	.half	.L418-.L24
+	.byte	1,5,45,9
+	.half	.L419-.L418
+	.byte	1,5,58,9
+	.half	.L420-.L419
+	.byte	1,5,21,9
+	.half	.L421-.L420
+	.byte	3,1,1,5,36,9
+	.half	.L26-.L421
+	.byte	3,2,1,5,17,9
+	.half	.L256-.L26
+	.byte	3,1,1,5,24,9
+	.half	.L422-.L256
+	.byte	1,5,38,9
+	.half	.L423-.L422
+	.byte	3,127,1,5,26,9
+	.half	.L21-.L423
+	.byte	3,5,1,5,13,9
+	.half	.L29-.L21
+	.byte	3,2,1,5,25,9
+	.half	.L424-.L29
+	.byte	1,5,5,9
+	.half	.L20-.L424
+	.byte	3,3,1,5,1,9
+	.half	.L30-.L20
+	.byte	3,1,1,7,9
+	.half	.L161-.L30
+	.byte	0,1,1
+.L395:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_write_element')
+	.sect	'.debug_ranges'
+.L160:
+	.word	-1,.L132,0,.L161-.L132,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_write_buffer')
+	.sect	'.debug_info'
+.L162:
+	.word	330
+	.half	3
+	.word	.L163
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L165,.L164
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_write_buffer',0,1,181,1,17
+	.word	.L197
+	.byte	1,1,1
+	.word	.L134,.L209,.L133
+	.byte	4
+	.byte	'fifo',0,1,181,1,49
+	.word	.L199,.L210
+	.byte	4
+	.byte	'dat',0,1,181,1,61
+	.word	.L211,.L212
+	.byte	4
+	.byte	'length',0,1,181,1,73
+	.word	.L202,.L213
+	.byte	5
+	.word	.L134,.L209
+	.byte	6
+	.byte	'return_state',0,1,183,1,21
+	.word	.L197,.L214
+	.byte	6
+	.byte	'temp_length',0,1,184,1,12
+	.word	.L202,.L215
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_write_buffer')
+	.sect	'.debug_abbrev'
+.L163:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_write_buffer')
+	.sect	'.debug_line'
+.L164:
+	.word	.L426-.L425
+.L425:
+	.half	3
+	.word	.L428-.L427
+.L427:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L428:
+	.byte	5,17,7,0,5,2
+	.word	.L134
+	.byte	3,180,1,1,5,34,9
+	.half	.L264-.L134
+	.byte	3,2,1,5,12,9
+	.half	.L31-.L264
+	.byte	3,5,1,5,9,9
+	.half	.L429-.L31
+	.byte	1,5,26,7,9
+	.half	.L430-.L429
+	.byte	3,2,1,5,13,9
+	.half	.L431-.L430
+	.byte	3,1,1,5,29,9
+	.half	.L32-.L431
+	.byte	3,2,1,5,9,9
+	.half	.L432-.L32
+	.byte	1,5,26,7,9
+	.half	.L433-.L432
+	.byte	3,2,1,5,13,9
+	.half	.L434-.L433
+	.byte	3,1,1,9
+	.half	.L34-.L434
+	.byte	3,2,1,5,25,9
+	.half	.L435-.L34
+	.byte	1,5,26,9
+	.half	.L436-.L435
+	.byte	3,2,1,5,9,9
+	.half	.L437-.L436
+	.byte	1,5,31,7,9
+	.half	.L438-.L437
+	.byte	3,2,1,5,43,9
+	.half	.L439-.L438
+	.byte	1,5,37,9
+	.half	.L440-.L439
+	.byte	1,5,13,9
+	.half	.L265-.L440
+	.byte	3,2,1,5,28,7,9
+	.half	.L441-.L265
+	.byte	3,2,1,5,26,9
+	.half	.L442-.L441
+	.byte	3,2,1,9
+	.half	.L443-.L442
+	.byte	3,11,1,9
+	.half	.L444-.L443
+	.byte	3,11,1,5,45,9
+	.half	.L38-.L444
+	.byte	3,108,1,5,59,9
+	.half	.L445-.L38
+	.byte	1,5,54,9
+	.half	.L446-.L445
+	.byte	1,5,34,9
+	.half	.L260-.L446
+	.byte	3,1,1,5,48,9
+	.half	.L259-.L260
+	.byte	3,1,1,5,45,9
+	.half	.L267-.L259
+	.byte	3,2,1,5,59,9
+	.half	.L447-.L267
+	.byte	1,5,54,9
+	.half	.L448-.L447
+	.byte	1,5,45,9
+	.half	.L449-.L448
+	.byte	3,1,1,5,36,9
+	.half	.L450-.L449
+	.byte	3,1,1,5,55,9
+	.half	.L451-.L450
+	.byte	3,1,1,5,25,9
+	.half	.L270-.L451
+	.byte	3,1,1,5,46,9
+	.half	.L39-.L270
+	.byte	3,3,1,5,60,9
+	.half	.L452-.L39
+	.byte	1,5,55,9
+	.half	.L453-.L452
+	.byte	1,5,46,9
+	.half	.L272-.L453
+	.byte	3,1,1,5,48,9
+	.half	.L271-.L272
+	.byte	3,1,1,5,46,9
+	.half	.L275-.L271
+	.byte	3,2,1,5,60,9
+	.half	.L454-.L275
+	.byte	1,5,55,9
+	.half	.L455-.L454
+	.byte	1,5,46,9
+	.half	.L456-.L455
+	.byte	3,1,1,5,37,9
+	.half	.L457-.L456
+	.byte	3,1,1,5,52,9
+	.half	.L458-.L457
+	.byte	1,5,55,9
+	.half	.L459-.L458
+	.byte	3,1,1,5,25,9
+	.half	.L278-.L459
+	.byte	3,1,1,5,46,9
+	.half	.L40-.L278
+	.byte	3,3,1,5,60,9
+	.half	.L460-.L40
+	.byte	1,5,55,9
+	.half	.L461-.L460
+	.byte	1,5,46,9
+	.half	.L280-.L461
+	.byte	3,1,1,5,48,9
+	.half	.L279-.L280
+	.byte	3,1,1,5,46,9
+	.half	.L283-.L279
+	.byte	3,2,1,5,60,9
+	.half	.L462-.L283
+	.byte	1,5,55,9
+	.half	.L463-.L462
+	.byte	1,5,46,9
+	.half	.L464-.L463
+	.byte	3,1,1,5,37,9
+	.half	.L465-.L464
+	.byte	3,1,1,5,52,9
+	.half	.L466-.L465
+	.byte	1,5,55,9
+	.half	.L467-.L466
+	.byte	3,1,1,5,25,9
+	.half	.L286-.L467
+	.byte	3,1,1,5,13,9
+	.half	.L42-.L286
+	.byte	3,2,1,5,28,9
+	.half	.L37-.L42
+	.byte	3,3,1,5,26,9
+	.half	.L468-.L37
+	.byte	3,2,1,9
+	.half	.L469-.L468
+	.byte	3,6,1,9
+	.half	.L470-.L469
+	.byte	3,6,1,5,45,9
+	.half	.L46-.L470
+	.byte	3,118,1,5,59,9
+	.half	.L471-.L46
+	.byte	1,5,54,9
+	.half	.L472-.L471
+	.byte	1,5,34,9
+	.half	.L288-.L472
+	.byte	3,1,1,5,48,9
+	.half	.L287-.L288
+	.byte	3,1,1,5,25,9
+	.half	.L290-.L287
+	.byte	3,1,1,5,46,9
+	.half	.L47-.L290
+	.byte	3,3,1,5,60,9
+	.half	.L473-.L47
+	.byte	1,5,55,9
+	.half	.L474-.L473
+	.byte	1,5,41,9
+	.half	.L293-.L474
+	.byte	3,1,1,5,48,9
+	.half	.L292-.L293
+	.byte	3,1,1,5,25,9
+	.half	.L296-.L292
+	.byte	3,1,1,5,46,9
+	.half	.L48-.L296
+	.byte	3,3,1,5,60,9
+	.half	.L475-.L48
+	.byte	1,5,55,9
+	.half	.L476-.L475
+	.byte	1,5,41,9
+	.half	.L299-.L476
+	.byte	3,1,1,5,48,9
+	.half	.L298-.L299
+	.byte	3,1,1,5,25,9
+	.half	.L302-.L298
+	.byte	3,1,1,5,17,9
+	.half	.L45-.L302
+	.byte	3,6,1,5,24,9
+	.half	.L477-.L45
+	.byte	1,5,33,9
+	.half	.L478-.L477
+	.byte	1,5,26,9
+	.half	.L36-.L478
+	.byte	3,4,1,5,13,9
+	.half	.L53-.L36
+	.byte	3,2,1,5,25,9
+	.half	.L479-.L53
+	.byte	1,5,5,9
+	.half	.L33-.L479
+	.byte	3,3,1,5,1,9
+	.half	.L54-.L33
+	.byte	3,1,1,7,9
+	.half	.L166-.L54
+	.byte	0,1,1
+.L426:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_write_buffer')
+	.sect	'.debug_ranges'
+.L165:
+	.word	-1,.L134,0,.L166-.L134,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_read_element')
+	.sect	'.debug_info'
+.L167:
+	.word	303
+	.half	3
+	.word	.L168
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L170,.L169
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_read_element',0,1,163,2,17
+	.word	.L197
+	.byte	1,1,1
+	.word	.L136,.L216,.L135
+	.byte	4
+	.byte	'fifo',0,1,163,2,49
+	.word	.L199,.L217
+	.byte	4
+	.byte	'dat',0,1,163,2,61
+	.word	.L211,.L218
+	.byte	4
+	.byte	'flag',0,1,163,2,86
+	.word	.L219,.L220
+	.byte	5
+	.word	.L136,.L216
+	.byte	6
+	.byte	'return_state',0,1,165,2,21
+	.word	.L197,.L221
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_read_element')
+	.sect	'.debug_abbrev'
+.L168:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_read_element')
+	.sect	'.debug_line'
+.L169:
+	.word	.L481-.L480
+.L480:
+	.half	3
+	.word	.L483-.L482
+.L482:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L483:
+	.byte	5,17,7,0,5,2
+	.word	.L136
+	.byte	3,162,2,1,5,34,9
+	.half	.L308-.L136
+	.byte	3,2,1,5,12,9
+	.half	.L55-.L308
+	.byte	3,4,1,5,9,9
+	.half	.L484-.L55
+	.byte	1,5,26,7,9
+	.half	.L485-.L484
+	.byte	3,2,1,5,13,9
+	.half	.L486-.L485
+	.byte	3,1,1,9
+	.half	.L56-.L486
+	.byte	3,2,1,5,25,9
+	.half	.L487-.L56
+	.byte	1,5,26,9
+	.half	.L488-.L487
+	.byte	3,2,1,5,9,9
+	.half	.L305-.L488
+	.byte	1,5,26,7,9
+	.half	.L489-.L305
+	.byte	3,2,1,5,20,9
+	.half	.L58-.L489
+	.byte	3,3,1,5,18,9
+	.half	.L490-.L58
+	.byte	3,2,1,9
+	.half	.L491-.L490
+	.byte	3,3,1,9
+	.half	.L492-.L491
+	.byte	3,3,1,5,49,9
+	.half	.L59-.L492
+	.byte	3,123,1,5,63,9
+	.half	.L493-.L59
+	.byte	1,5,58,9
+	.half	.L494-.L493
+	.byte	1,5,33,9
+	.half	.L495-.L494
+	.byte	1,5,17,9
+	.half	.L496-.L495
+	.byte	3,1,1,5,51,9
+	.half	.L60-.L496
+	.byte	3,2,1,5,65,9
+	.half	.L497-.L60
+	.byte	1,5,60,9
+	.half	.L498-.L497
+	.byte	1,5,34,9
+	.half	.L499-.L498
+	.byte	1,5,17,9
+	.half	.L500-.L499
+	.byte	3,1,1,5,51,9
+	.half	.L61-.L500
+	.byte	3,2,1,5,65,9
+	.half	.L501-.L61
+	.byte	1,5,60,9
+	.half	.L502-.L501
+	.byte	1,5,34,9
+	.half	.L503-.L502
+	.byte	1,5,17,9
+	.half	.L504-.L503
+	.byte	3,1,1,5,9,9
+	.half	.L63-.L504
+	.byte	3,3,1,5,33,7,9
+	.half	.L505-.L63
+	.byte	3,2,1,5,13,9
+	.half	.L506-.L505
+	.byte	1,5,30,7,9
+	.half	.L507-.L506
+	.byte	3,2,1,5,17,9
+	.half	.L508-.L507
+	.byte	3,1,1,9
+	.half	.L67-.L508
+	.byte	3,2,1,5,29,9
+	.half	.L509-.L67
+	.byte	1,5,35,9
+	.half	.L510-.L509
+	.byte	3,1,1,5,17,9
+	.half	.L310-.L510
+	.byte	3,1,1,5,24,9
+	.half	.L511-.L310
+	.byte	1,5,17,9
+	.half	.L512-.L511
+	.byte	3,1,1,5,29,9
+	.half	.L513-.L512
+	.byte	1,5,9,9
+	.half	.L57-.L513
+	.byte	3,3,1,5,21,9
+	.half	.L514-.L57
+	.byte	1,5,5,9
+	.half	.L515-.L514
+	.byte	3,2,1,5,1,9
+	.half	.L69-.L515
+	.byte	3,1,1,7,9
+	.half	.L171-.L69
+	.byte	0,1,1
+.L481:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_read_element')
+	.sect	'.debug_ranges'
+.L170:
+	.word	-1,.L136,0,.L171-.L136,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_read_buffer')
+	.sect	'.debug_info'
+.L172:
+	.word	347
+	.half	3
+	.word	.L173
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L175,.L174
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_read_buffer',0,1,222,2,17
+	.word	.L197
+	.byte	1,1,1
+	.word	.L138,.L222,.L137
+	.byte	4
+	.byte	'fifo',0,1,222,2,48
+	.word	.L199,.L223
+	.byte	4
+	.byte	'dat',0,1,222,2,60
+	.word	.L211,.L224
+	.byte	4
+	.byte	'length',0,1,222,2,73
+	.word	.L225,.L226
+	.byte	4
+	.byte	'flag',0,1,222,2,101
+	.word	.L219,.L227
+	.byte	5
+	.word	.L138,.L222
+	.byte	6
+	.byte	'return_state',0,1,224,2,21
+	.word	.L197,.L228
+	.byte	6
+	.byte	'temp_length',0,1,225,2,12
+	.word	.L202,.L229
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_read_buffer')
+	.sect	'.debug_abbrev'
+.L173:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_read_buffer')
+	.sect	'.debug_line'
+.L174:
+	.word	.L517-.L516
+.L516:
+	.half	3
+	.word	.L519-.L518
+.L518:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L519:
+	.byte	5,17,7,0,5,2
+	.word	.L138
+	.byte	3,221,2,1,5,34,9
+	.half	.L316-.L138
+	.byte	3,2,1,5,12,9
+	.half	.L70-.L316
+	.byte	3,5,1,5,9,9
+	.half	.L520-.L70
+	.byte	1,5,26,7,9
+	.half	.L521-.L520
+	.byte	3,2,1,5,13,9
+	.half	.L522-.L521
+	.byte	3,1,1,9
+	.half	.L71-.L522
+	.byte	3,2,1,5,25,9
+	.half	.L523-.L71
+	.byte	1,5,12,9
+	.half	.L524-.L523
+	.byte	3,2,1,5,32,9
+	.half	.L525-.L524
+	.byte	1,5,9,9
+	.half	.L312-.L525
+	.byte	1,5,28,7,9
+	.half	.L526-.L312
+	.byte	3,2,1,5,40,9
+	.half	.L527-.L526
+	.byte	1,5,34,9
+	.half	.L528-.L527
+	.byte	1,5,21,9
+	.half	.L529-.L528
+	.byte	1,5,26,9
+	.half	.L530-.L529
+	.byte	3,1,1,5,27,9
+	.half	.L73-.L530
+	.byte	3,3,1,5,39,9
+	.half	.L531-.L73
+	.byte	1,5,33,9
+	.half	.L532-.L531
+	.byte	1,5,12,9
+	.half	.L317-.L532
+	.byte	3,1,1,5,9,9
+	.half	.L533-.L317
+	.byte	1,5,24,7,9
+	.half	.L534-.L533
+	.byte	3,2,1,5,22,9
+	.half	.L535-.L534
+	.byte	3,2,1,9
+	.half	.L536-.L535
+	.byte	3,3,1,9
+	.half	.L537-.L536
+	.byte	3,3,1,5,49,9
+	.half	.L75-.L537
+	.byte	3,123,1,5,63,9
+	.half	.L538-.L75
+	.byte	1,5,58,9
+	.half	.L539-.L538
+	.byte	1,5,72,9
+	.half	.L540-.L539
+	.byte	1,5,21,9
+	.half	.L319-.L540
+	.byte	3,1,1,5,50,9
+	.half	.L76-.L319
+	.byte	3,2,1,5,64,9
+	.half	.L541-.L76
+	.byte	1,5,59,9
+	.half	.L542-.L541
+	.byte	1,5,73,9
+	.half	.L543-.L542
+	.byte	1,5,81,9
+	.half	.L544-.L543
+	.byte	1,5,21,9
+	.half	.L321-.L544
+	.byte	3,1,1,5,50,9
+	.half	.L77-.L321
+	.byte	3,2,1,5,64,9
+	.half	.L545-.L77
+	.byte	1,5,59,9
+	.half	.L546-.L545
+	.byte	1,5,73,9
+	.half	.L547-.L546
+	.byte	1,5,81,9
+	.half	.L548-.L547
+	.byte	1,5,21,9
+	.half	.L323-.L548
+	.byte	3,1,1,5,9,9
+	.half	.L79-.L323
+	.byte	3,2,1,5,24,9
+	.half	.L74-.L79
+	.byte	3,3,1,5,22,9
+	.half	.L549-.L74
+	.byte	3,2,1,9
+	.half	.L550-.L549
+	.byte	3,4,1,9
+	.half	.L551-.L550
+	.byte	3,4,1,5,49,9
+	.half	.L83-.L551
+	.byte	3,121,1,5,63,9
+	.half	.L552-.L83
+	.byte	1,5,58,9
+	.half	.L553-.L552
+	.byte	1,5,72,9
+	.half	.L554-.L553
+	.byte	1,5,44,9
+	.half	.L325-.L554
+	.byte	3,1,1,5,64,9
+	.half	.L555-.L325
+	.byte	1,5,74,9
+	.half	.L556-.L555
+	.byte	1,5,82,9
+	.half	.L557-.L556
+	.byte	1,5,21,9
+	.half	.L558-.L557
+	.byte	3,1,1,5,50,9
+	.half	.L84-.L558
+	.byte	3,2,1,5,64,9
+	.half	.L559-.L84
+	.byte	1,5,59,9
+	.half	.L560-.L559
+	.byte	1,5,85,9
+	.half	.L561-.L560
+	.byte	1,5,45,9
+	.half	.L328-.L561
+	.byte	3,1,1,5,65,9
+	.half	.L562-.L328
+	.byte	1,5,76,9
+	.half	.L563-.L562
+	.byte	1,5,84,9
+	.half	.L564-.L563
+	.byte	1,5,99,9
+	.half	.L565-.L564
+	.byte	1,5,21,9
+	.half	.L566-.L565
+	.byte	3,1,1,5,50,9
+	.half	.L85-.L566
+	.byte	3,2,1,5,64,9
+	.half	.L567-.L85
+	.byte	1,5,59,9
+	.half	.L568-.L567
+	.byte	1,5,85,9
+	.half	.L569-.L568
+	.byte	1,5,45,9
+	.half	.L330-.L569
+	.byte	3,1,1,5,65,9
+	.half	.L570-.L330
+	.byte	1,5,76,9
+	.half	.L571-.L570
+	.byte	1,5,84,9
+	.half	.L572-.L571
+	.byte	1,5,99,9
+	.half	.L573-.L572
+	.byte	1,5,21,9
+	.half	.L574-.L573
+	.byte	3,1,1,5,9,9
+	.half	.L82-.L574
+	.byte	3,4,1,5,33,7,9
+	.half	.L575-.L82
+	.byte	3,2,1,5,13,9
+	.half	.L576-.L575
+	.byte	1,5,30,7,9
+	.half	.L577-.L576
+	.byte	3,2,1,5,17,9
+	.half	.L578-.L577
+	.byte	3,1,1,9
+	.half	.L91-.L578
+	.byte	3,2,1,5,29,9
+	.half	.L579-.L91
+	.byte	1,5,35,9
+	.half	.L580-.L579
+	.byte	3,1,1,5,17,9
+	.half	.L332-.L580
+	.byte	3,1,1,5,27,9
+	.half	.L581-.L332
+	.byte	1,5,24,9
+	.half	.L582-.L581
+	.byte	1,5,17,9
+	.half	.L583-.L582
+	.byte	3,1,1,5,29,9
+	.half	.L584-.L583
+	.byte	1,5,9,9
+	.half	.L72-.L584
+	.byte	3,3,1,5,21,9
+	.half	.L585-.L72
+	.byte	1,5,5,9
+	.half	.L586-.L585
+	.byte	3,2,1,5,1,9
+	.half	.L93-.L586
+	.byte	3,1,1,7,9
+	.half	.L176-.L93
+	.byte	0,1,1
+.L517:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_read_buffer')
+	.sect	'.debug_ranges'
+.L175:
+	.word	-1,.L138,0,.L176-.L138,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_read_tail_buffer')
+	.sect	'.debug_info'
+.L177:
+	.word	352
+	.half	3
+	.word	.L178
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L180,.L179
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_read_tail_buffer',0,1,179,3,17
+	.word	.L197
+	.byte	1,1,1
+	.word	.L140,.L230,.L139
+	.byte	4
+	.byte	'fifo',0,1,179,3,53
+	.word	.L199,.L231
+	.byte	4
+	.byte	'dat',0,1,179,3,65
+	.word	.L211,.L232
+	.byte	4
+	.byte	'length',0,1,179,3,78
+	.word	.L225,.L233
+	.byte	4
+	.byte	'flag',0,1,179,3,106
+	.word	.L219,.L234
+	.byte	5
+	.word	.L140,.L230
+	.byte	6
+	.byte	'return_state',0,1,181,3,21
+	.word	.L197,.L235
+	.byte	6
+	.byte	'temp_length',0,1,182,3,12
+	.word	.L202,.L236
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_read_tail_buffer')
+	.sect	'.debug_abbrev'
+.L178:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_read_tail_buffer')
+	.sect	'.debug_line'
+.L179:
+	.word	.L588-.L587
+.L587:
+	.half	3
+	.word	.L590-.L589
+.L589:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L590:
+	.byte	5,17,7,0,5,2
+	.word	.L140
+	.byte	3,178,3,1,5,34,9
+	.half	.L338-.L140
+	.byte	3,2,1,5,12,9
+	.half	.L94-.L338
+	.byte	3,5,1,5,9,9
+	.half	.L591-.L94
+	.byte	1,5,26,7,9
+	.half	.L592-.L591
+	.byte	3,2,1,5,13,9
+	.half	.L593-.L592
+	.byte	3,1,1,9
+	.half	.L95-.L593
+	.byte	3,2,1,5,25,9
+	.half	.L594-.L95
+	.byte	1,5,12,9
+	.half	.L595-.L594
+	.byte	3,2,1,5,32,9
+	.half	.L596-.L595
+	.byte	1,5,9,9
+	.half	.L334-.L596
+	.byte	1,5,28,7,9
+	.half	.L597-.L334
+	.byte	3,2,1,5,40,9
+	.half	.L598-.L597
+	.byte	1,5,34,9
+	.half	.L599-.L598
+	.byte	1,5,21,9
+	.half	.L600-.L599
+	.byte	1,5,26,9
+	.half	.L601-.L600
+	.byte	3,1,1,5,17,9
+	.half	.L97-.L601
+	.byte	3,3,1,5,30,9
+	.half	.L602-.L97
+	.byte	1,5,12,9
+	.half	.L603-.L602
+	.byte	1,5,45,7,9
+	.half	.L604-.L603
+	.byte	1,5,55,9
+	.half	.L605-.L604
+	.byte	1,5,52,9
+	.half	.L606-.L605
+	.byte	1,5,24,7,9
+	.half	.L98-.L606
+	.byte	3,2,1,5,22,9
+	.half	.L607-.L98
+	.byte	3,2,1,9
+	.half	.L608-.L607
+	.byte	3,3,1,9
+	.half	.L609-.L608
+	.byte	3,3,1,5,49,9
+	.half	.L100-.L609
+	.byte	3,123,1,5,63,9
+	.half	.L610-.L100
+	.byte	1,5,72,9
+	.half	.L611-.L610
+	.byte	1,5,70,9
+	.half	.L612-.L611
+	.byte	1,5,58,9
+	.half	.L613-.L612
+	.byte	1,5,83,9
+	.half	.L614-.L613
+	.byte	1,5,21,9
+	.half	.L340-.L614
+	.byte	3,1,1,5,50,9
+	.half	.L101-.L340
+	.byte	3,2,1,5,64,9
+	.half	.L615-.L101
+	.byte	1,5,73,9
+	.half	.L616-.L615
+	.byte	1,5,71,9
+	.half	.L617-.L616
+	.byte	1,5,59,9
+	.half	.L618-.L617
+	.byte	1,5,84,9
+	.half	.L619-.L618
+	.byte	1,5,92,9
+	.half	.L620-.L619
+	.byte	1,5,21,9
+	.half	.L342-.L620
+	.byte	3,1,1,5,50,9
+	.half	.L102-.L342
+	.byte	3,2,1,5,64,9
+	.half	.L621-.L102
+	.byte	1,5,73,9
+	.half	.L622-.L621
+	.byte	1,5,71,9
+	.half	.L623-.L622
+	.byte	1,5,59,9
+	.half	.L624-.L623
+	.byte	1,5,84,9
+	.half	.L625-.L624
+	.byte	1,5,92,9
+	.half	.L626-.L625
+	.byte	1,5,21,9
+	.half	.L344-.L626
+	.byte	3,1,1,5,9,9
+	.half	.L104-.L344
+	.byte	3,2,1,5,27,9
+	.half	.L99-.L104
+	.byte	3,3,1,5,41,9
+	.half	.L627-.L99
+	.byte	1,5,35,9
+	.half	.L345-.L627
+	.byte	1,5,24,9
+	.half	.L628-.L345
+	.byte	3,1,1,5,22,9
+	.half	.L629-.L628
+	.byte	3,2,1,9
+	.half	.L630-.L629
+	.byte	3,4,1,9
+	.half	.L631-.L630
+	.byte	3,4,1,5,49,9
+	.half	.L108-.L631
+	.byte	3,121,1,5,63,9
+	.half	.L632-.L108
+	.byte	1,5,69,9
+	.half	.L633-.L632
+	.byte	1,5,58,9
+	.half	.L634-.L633
+	.byte	1,5,86,9
+	.half	.L635-.L634
+	.byte	1,5,44,9
+	.half	.L347-.L635
+	.byte	3,1,1,5,76,9
+	.half	.L636-.L347
+	.byte	1,5,90,9
+	.half	.L637-.L636
+	.byte	1,5,99,9
+	.half	.L638-.L637
+	.byte	1,5,97,9
+	.half	.L639-.L638
+	.byte	1,5,85,9
+	.half	.L640-.L639
+	.byte	1,5,111,9
+	.half	.L641-.L640
+	.byte	1,5,119,9
+	.half	.L642-.L641
+	.byte	1,5,21,9
+	.half	.L643-.L642
+	.byte	3,1,1,5,50,9
+	.half	.L109-.L643
+	.byte	3,2,1,5,64,9
+	.half	.L644-.L109
+	.byte	1,5,70,9
+	.half	.L645-.L644
+	.byte	1,5,59,9
+	.half	.L646-.L645
+	.byte	1,5,99,9
+	.half	.L647-.L646
+	.byte	1,5,45,9
+	.half	.L350-.L647
+	.byte	3,1,1,5,78,9
+	.half	.L648-.L350
+	.byte	1,5,92,9
+	.half	.L649-.L648
+	.byte	1,5,101,9
+	.half	.L650-.L649
+	.byte	1,5,99,9
+	.half	.L651-.L650
+	.byte	1,5,87,9
+	.half	.L652-.L651
+	.byte	1,5,113,9
+	.half	.L653-.L652
+	.byte	1,5,121,9
+	.half	.L654-.L653
+	.byte	1,5,136,1,9
+	.half	.L655-.L654
+	.byte	1,5,21,9
+	.half	.L656-.L655
+	.byte	3,1,1,5,50,9
+	.half	.L110-.L656
+	.byte	3,2,1,5,64,9
+	.half	.L657-.L110
+	.byte	1,5,70,9
+	.half	.L658-.L657
+	.byte	1,5,59,9
+	.half	.L659-.L658
+	.byte	1,5,99,9
+	.half	.L660-.L659
+	.byte	1,5,45,9
+	.half	.L352-.L660
+	.byte	3,1,1,5,78,9
+	.half	.L661-.L352
+	.byte	1,5,92,9
+	.half	.L662-.L661
+	.byte	1,5,101,9
+	.half	.L663-.L662
+	.byte	1,5,99,9
+	.half	.L664-.L663
+	.byte	1,5,87,9
+	.half	.L665-.L664
+	.byte	1,5,113,9
+	.half	.L666-.L665
+	.byte	1,5,121,9
+	.half	.L667-.L666
+	.byte	1,5,136,1,9
+	.half	.L668-.L667
+	.byte	1,5,21,9
+	.half	.L669-.L668
+	.byte	3,1,1,5,9,9
+	.half	.L107-.L669
+	.byte	3,4,1,5,33,7,9
+	.half	.L670-.L107
+	.byte	3,2,1,5,13,9
+	.half	.L671-.L670
+	.byte	1,5,30,7,9
+	.half	.L672-.L671
+	.byte	3,2,1,5,17,9
+	.half	.L673-.L672
+	.byte	3,1,1,9
+	.half	.L116-.L673
+	.byte	3,2,1,5,29,9
+	.half	.L674-.L116
+	.byte	1,5,40,9
+	.half	.L675-.L674
+	.byte	3,1,1,5,52,9
+	.half	.L676-.L675
+	.byte	1,5,46,9
+	.half	.L677-.L676
+	.byte	1,5,30,9
+	.half	.L354-.L677
+	.byte	3,1,1,5,24,9
+	.half	.L678-.L354
+	.byte	1,5,17,9
+	.half	.L679-.L678
+	.byte	3,1,1,5,29,9
+	.half	.L680-.L679
+	.byte	1,5,9,9
+	.half	.L96-.L680
+	.byte	3,3,1,5,21,9
+	.half	.L681-.L96
+	.byte	1,5,5,9
+	.half	.L682-.L681
+	.byte	3,2,1,5,1,9
+	.half	.L118-.L682
+	.byte	3,1,1,7,9
+	.half	.L181-.L118
+	.byte	0,1,1
+.L588:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_read_tail_buffer')
+	.sect	'.debug_ranges'
+.L180:
+	.word	-1,.L140,0,.L181-.L140,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_init')
+	.sect	'.debug_info'
+.L182:
+	.word	321
+	.half	3
+	.word	.L183
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L185,.L184
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_init',0,1,134,4,17
+	.word	.L197
+	.byte	1,1,1
+	.word	.L142,.L237,.L141
+	.byte	4
+	.byte	'fifo',0,1,134,4,41
+	.word	.L199,.L238
+	.byte	4
+	.byte	'type',0,1,134,4,67
+	.word	.L239,.L240
+	.byte	4
+	.byte	'buffer_addr',0,1,134,4,79
+	.word	.L211,.L241
+	.byte	4
+	.byte	'size',0,1,134,4,99
+	.word	.L202,.L242
+	.byte	5
+	.word	.L142,.L237
+	.byte	6
+	.byte	'return_value',0,1,136,4,21
+	.word	.L197,.L243
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_init')
+	.sect	'.debug_abbrev'
+.L183:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_init')
+	.sect	'.debug_line'
+.L184:
+	.word	.L684-.L683
+.L683:
+	.half	3
+	.word	.L686-.L685
+.L685:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L686:
+	.byte	5,34,7,0,5,2
+	.word	.L142
+	.byte	3,135,4,1,5,12,9
+	.half	.L119-.L142
+	.byte	3,3,1,5,9,9
+	.half	.L687-.L119
+	.byte	1,5,26,7,9
+	.half	.L688-.L687
+	.byte	3,2,1,5,13,9
+	.half	.L689-.L688
+	.byte	3,1,1,5,33,9
+	.half	.L120-.L689
+	.byte	3,2,1,5,35,9
+	.half	.L690-.L120
+	.byte	3,1,1,5,33,9
+	.half	.L691-.L690
+	.byte	1,9
+	.half	.L692-.L691
+	.byte	3,1,1,5,35,9
+	.half	.L693-.L692
+	.byte	3,1,1,5,33,9
+	.half	.L694-.L693
+	.byte	1,5,35,9
+	.half	.L695-.L694
+	.byte	3,1,1,5,33,9
+	.half	.L696-.L695
+	.byte	1,9
+	.half	.L697-.L696
+	.byte	3,1,1,9
+	.half	.L698-.L697
+	.byte	3,1,1,5,5,9
+	.half	.L121-.L698
+	.byte	3,2,1,5,1,9
+	.half	.L122-.L121
+	.byte	3,1,1,7,9
+	.half	.L186-.L122
+	.byte	0,1,1
+.L684:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_init')
+	.sect	'.debug_ranges'
+.L185:
+	.word	-1,.L142,0,.L186-.L142,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_head_offset')
+	.sect	'.debug_info'
+.L187:
+	.word	252
+	.half	3
+	.word	.L188
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L190,.L189
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_head_offset',0,1,46,13,1,1
+	.word	.L124,.L244,.L123
+	.byte	4
+	.byte	'fifo',0,1,46,44
+	.word	.L199,.L245
+	.byte	4
+	.byte	'offset',0,1,46,57
+	.word	.L202,.L246
+	.byte	5
+	.word	.L124,.L244
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_head_offset')
+	.sect	'.debug_abbrev'
+.L188:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_head_offset')
+	.sect	'.debug_line'
+.L189:
+	.word	.L700-.L699
+.L699:
+	.half	3
+	.word	.L702-.L701
+.L701:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L702:
+	.byte	5,9,7,0,5,2
+	.word	.L124
+	.byte	3,47,1,5,16,9
+	.half	.L703-.L124
+	.byte	1,5,34,9
+	.half	.L704-.L703
+	.byte	3,2,1,5,13,9
+	.half	.L3-.L704
+	.byte	3,2,1,5,27,9
+	.half	.L705-.L3
+	.byte	1,5,20,9
+	.half	.L706-.L705
+	.byte	1,5,15,9
+	.half	.L2-.L706
+	.byte	3,126,1,5,28,9
+	.half	.L707-.L2
+	.byte	1,5,34,9
+	.half	.L708-.L707
+	.byte	1,5,1,7,9
+	.half	.L709-.L708
+	.byte	3,4,1,7,9
+	.half	.L191-.L709
+	.byte	0,1,1
+.L700:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_head_offset')
+	.sect	'.debug_ranges'
+.L190:
+	.word	-1,.L124,0,.L191-.L124,0,0
+	.sdecl	'.debug_info',debug,cluster('fifo_end_offset')
+	.sect	'.debug_info'
+.L192:
+	.word	251
+	.half	3
+	.word	.L193
+	.byte	4,1
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'Y:\\Unicycle\\ReUnicycle\\Debug\\',0,12,1
+	.word	.L195,.L194
+	.byte	2
+	.word	.L143
+	.byte	3
+	.byte	'fifo_end_offset',0,1,64,13,1,1
+	.word	.L126,.L247,.L125
+	.byte	4
+	.byte	'fifo',0,1,64,43
+	.word	.L199,.L248
+	.byte	4
+	.byte	'offset',0,1,64,56
+	.word	.L202,.L249
+	.byte	5
+	.word	.L126,.L247
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('fifo_end_offset')
+	.sect	'.debug_abbrev'
+.L193:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('fifo_end_offset')
+	.sect	'.debug_line'
+.L194:
+	.word	.L711-.L710
+.L710:
+	.half	3
+	.word	.L713-.L712
+.L712:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../libraries/zf_common/zf_common_fifo.c',0,0,0,0,0
+.L713:
+	.byte	5,9,7,0,5,2
+	.word	.L126
+	.byte	3,193,0,1,5,15,9
+	.half	.L714-.L126
+	.byte	1,5,33,9
+	.half	.L715-.L714
+	.byte	3,2,1,5,13,9
+	.half	.L5-.L715
+	.byte	3,2,1,5,26,9
+	.half	.L716-.L5
+	.byte	1,5,19,9
+	.half	.L717-.L716
+	.byte	1,5,15,9
+	.half	.L4-.L717
+	.byte	3,126,1,5,28,9
+	.half	.L718-.L4
+	.byte	1,5,33,9
+	.half	.L719-.L718
+	.byte	1,5,1,7,9
+	.half	.L720-.L719
+	.byte	3,4,1,7,9
+	.half	.L196-.L720
+	.byte	0,1,1
+.L711:
+	.sdecl	'.debug_ranges',debug,cluster('fifo_end_offset')
+	.sect	'.debug_ranges'
+.L195:
+	.word	-1,.L126,0,.L196-.L126,0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_clear')
+	.sect	'.debug_loc'
+.L200:
+	.word	-1,.L128,0,.L250-.L128
+	.half	1
+	.byte	100
+	.word	.L251-.L128,.L198-.L128
+	.half	1
+	.byte	111
+	.word	.L10-.L128,.L252-.L128
+	.half	1
+	.byte	100
+	.word	.L11-.L128,.L253-.L128
+	.half	1
+	.byte	100
+	.word	0,0
+.L127:
+	.word	-1,.L128,0,.L198-.L128
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L201:
+	.word	-1,.L128,.L6-.L128,.L198-.L128
+	.half	1
+	.byte	88
+	.word	.L254-.L128,.L198-.L128
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_end_offset')
+	.sect	'.debug_loc'
+.L248:
+	.word	-1,.L126,0,.L247-.L126
+	.half	1
+	.byte	100
+	.word	0,0
+.L125:
+	.word	-1,.L126,0,.L247-.L126
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L249:
+	.word	-1,.L126,0,.L247-.L126
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_head_offset')
+	.sect	'.debug_loc'
+.L245:
+	.word	-1,.L124,0,.L244-.L124
+	.half	1
+	.byte	100
+	.word	0,0
+.L123:
+	.word	-1,.L124,0,.L244-.L124
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L246:
+	.word	-1,.L124,0,.L244-.L124
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_init')
+	.sect	'.debug_loc'
+.L241:
+	.word	-1,.L142,0,.L237-.L142
+	.half	1
+	.byte	101
+	.word	0,0
+.L238:
+	.word	-1,.L142,0,.L237-.L142
+	.half	1
+	.byte	100
+	.word	0,0
+.L141:
+	.word	-1,.L142,0,.L237-.L142
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L243:
+	.word	-1,.L142,.L119-.L142,.L237-.L142
+	.half	1
+	.byte	82
+	.word	0,0
+.L242:
+	.word	-1,.L142,0,.L237-.L142
+	.half	1
+	.byte	85
+	.word	0,0
+.L240:
+	.word	-1,.L142,0,.L237-.L142
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_read_buffer')
+	.sect	'.debug_loc'
+.L224:
+	.word	-1,.L138,0,.L312-.L138
+	.half	1
+	.byte	101
+	.word	.L314-.L138,.L222-.L138
+	.half	1
+	.byte	108
+	.word	.L318-.L138,.L319-.L138
+	.half	1
+	.byte	100
+	.word	.L320-.L138,.L321-.L138
+	.half	1
+	.byte	100
+	.word	.L322-.L138,.L323-.L138
+	.half	1
+	.byte	100
+	.word	.L324-.L138,.L325-.L138
+	.half	1
+	.byte	100
+	.word	.L327-.L138,.L328-.L138
+	.half	1
+	.byte	100
+	.word	.L329-.L138,.L330-.L138
+	.half	1
+	.byte	100
+	.word	0,0
+.L223:
+	.word	-1,.L138,0,.L312-.L138
+	.half	1
+	.byte	100
+	.word	.L313-.L138,.L222-.L138
+	.half	1
+	.byte	111
+	.word	.L331-.L138,.L332-.L138
+	.half	1
+	.byte	100
+	.word	0,0
+.L137:
+	.word	-1,.L138,0,.L222-.L138
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L227:
+	.word	-1,.L138,0,.L312-.L138
+	.half	1
+	.byte	84
+	.word	.L316-.L138,.L222-.L138
+	.half	1
+	.byte	89
+	.word	0,0
+.L226:
+	.word	-1,.L138,0,.L312-.L138
+	.half	1
+	.byte	102
+	.word	.L315-.L138,.L222-.L138
+	.half	1
+	.byte	109
+	.word	0,0
+.L228:
+	.word	-1,.L138,.L70-.L138,.L222-.L138
+	.half	1
+	.byte	90
+	.word	.L333-.L138,.L222-.L138
+	.half	1
+	.byte	82
+	.word	0,0
+.L229:
+	.word	-1,.L138,.L317-.L138,.L72-.L138
+	.half	1
+	.byte	88
+	.word	.L326-.L138,.L325-.L138
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_read_element')
+	.sect	'.debug_loc'
+.L218:
+	.word	-1,.L136,0,.L305-.L136
+	.half	1
+	.byte	101
+	.word	.L307-.L136,.L216-.L136
+	.half	1
+	.byte	108
+	.word	0,0
+.L217:
+	.word	-1,.L136,0,.L305-.L136
+	.half	1
+	.byte	100
+	.word	.L306-.L136,.L216-.L136
+	.half	1
+	.byte	111
+	.word	.L309-.L136,.L310-.L136
+	.half	1
+	.byte	100
+	.word	0,0
+.L135:
+	.word	-1,.L136,0,.L216-.L136
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L220:
+	.word	-1,.L136,0,.L305-.L136
+	.half	1
+	.byte	84
+	.word	.L308-.L136,.L216-.L136
+	.half	1
+	.byte	88
+	.word	0,0
+.L221:
+	.word	-1,.L136,.L55-.L136,.L216-.L136
+	.half	1
+	.byte	89
+	.word	.L311-.L136,.L216-.L136
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_read_tail_buffer')
+	.sect	'.debug_loc'
+.L232:
+	.word	-1,.L140,0,.L334-.L140
+	.half	1
+	.byte	101
+	.word	.L336-.L140,.L230-.L140
+	.half	1
+	.byte	108
+	.word	.L339-.L140,.L340-.L140
+	.half	1
+	.byte	100
+	.word	.L341-.L140,.L342-.L140
+	.half	1
+	.byte	100
+	.word	.L343-.L140,.L344-.L140
+	.half	1
+	.byte	100
+	.word	.L346-.L140,.L347-.L140
+	.half	1
+	.byte	100
+	.word	.L349-.L140,.L350-.L140
+	.half	1
+	.byte	100
+	.word	.L351-.L140,.L352-.L140
+	.half	1
+	.byte	100
+	.word	0,0
+.L231:
+	.word	-1,.L140,0,.L334-.L140
+	.half	1
+	.byte	100
+	.word	.L335-.L140,.L230-.L140
+	.half	1
+	.byte	111
+	.word	.L353-.L140,.L354-.L140
+	.half	1
+	.byte	100
+	.word	0,0
+.L139:
+	.word	-1,.L140,0,.L230-.L140
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L234:
+	.word	-1,.L140,0,.L334-.L140
+	.half	1
+	.byte	84
+	.word	.L338-.L140,.L230-.L140
+	.half	1
+	.byte	89
+	.word	0,0
+.L233:
+	.word	-1,.L140,0,.L334-.L140
+	.half	1
+	.byte	102
+	.word	.L337-.L140,.L230-.L140
+	.half	1
+	.byte	109
+	.word	0,0
+.L235:
+	.word	-1,.L140,.L94-.L140,.L230-.L140
+	.half	1
+	.byte	90
+	.word	.L355-.L140,.L230-.L140
+	.half	1
+	.byte	82
+	.word	0,0
+.L236:
+	.word	-1,.L140,.L345-.L140,.L107-.L140
+	.half	1
+	.byte	88
+	.word	.L348-.L140,.L347-.L140
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_used')
+	.sect	'.debug_loc'
+.L204:
+	.word	-1,.L130,0,.L203-.L130
+	.half	1
+	.byte	100
+	.word	0,0
+.L129:
+	.word	-1,.L130,0,.L203-.L130
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_write_buffer')
+	.sect	'.debug_loc'
+.L212:
+	.word	-1,.L134,0,.L259-.L134
+	.half	1
+	.byte	101
+	.word	.L263-.L134,.L209-.L134
+	.half	1
+	.byte	108
+	.word	.L39-.L134,.L271-.L134
+	.half	1
+	.byte	101
+	.word	.L40-.L134,.L279-.L134
+	.half	1
+	.byte	101
+	.word	.L37-.L134,.L287-.L134
+	.half	1
+	.byte	101
+	.word	.L47-.L134,.L292-.L134
+	.half	1
+	.byte	101
+	.word	.L48-.L134,.L298-.L134
+	.half	1
+	.byte	101
+	.word	.L36-.L134,.L53-.L134
+	.half	1
+	.byte	101
+	.word	0,0
+.L210:
+	.word	-1,.L134,0,.L260-.L134
+	.half	1
+	.byte	100
+	.word	.L262-.L134,.L209-.L134
+	.half	1
+	.byte	111
+	.word	.L266-.L134,.L267-.L134
+	.half	1
+	.byte	100
+	.word	.L269-.L134,.L270-.L134
+	.half	1
+	.byte	100
+	.word	.L39-.L134,.L272-.L134
+	.half	1
+	.byte	100
+	.word	.L274-.L134,.L275-.L134
+	.half	1
+	.byte	100
+	.word	.L277-.L134,.L278-.L134
+	.half	1
+	.byte	100
+	.word	.L40-.L134,.L280-.L134
+	.half	1
+	.byte	100
+	.word	.L282-.L134,.L283-.L134
+	.half	1
+	.byte	100
+	.word	.L285-.L134,.L286-.L134
+	.half	1
+	.byte	100
+	.word	.L37-.L134,.L288-.L134
+	.half	1
+	.byte	100
+	.word	.L289-.L134,.L290-.L134
+	.half	1
+	.byte	100
+	.word	.L47-.L134,.L293-.L134
+	.half	1
+	.byte	100
+	.word	.L295-.L134,.L296-.L134
+	.half	1
+	.byte	100
+	.word	.L48-.L134,.L299-.L134
+	.half	1
+	.byte	100
+	.word	.L301-.L134,.L302-.L134
+	.half	1
+	.byte	100
+	.word	.L36-.L134,.L53-.L134
+	.half	1
+	.byte	100
+	.word	0,0
+.L133:
+	.word	-1,.L134,0,.L209-.L134
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L213:
+	.word	-1,.L134,0,.L261-.L134
+	.half	1
+	.byte	84
+	.word	.L264-.L134,.L209-.L134
+	.half	1
+	.byte	88
+	.word	.L39-.L134,.L273-.L134
+	.half	1
+	.byte	84
+	.word	.L40-.L134,.L281-.L134
+	.half	1
+	.byte	84
+	.word	.L37-.L134,.L287-.L134
+	.half	1
+	.byte	84
+	.word	.L291-.L134,.L290-.L134
+	.half	1
+	.byte	84
+	.word	.L47-.L134,.L294-.L134
+	.half	1
+	.byte	84
+	.word	.L297-.L134,.L296-.L134
+	.half	1
+	.byte	84
+	.word	.L48-.L134,.L300-.L134
+	.half	1
+	.byte	84
+	.word	.L303-.L134,.L302-.L134
+	.half	1
+	.byte	84
+	.word	.L36-.L134,.L53-.L134
+	.half	1
+	.byte	84
+	.word	0,0
+.L214:
+	.word	-1,.L134,.L31-.L134,.L209-.L134
+	.half	1
+	.byte	89
+	.word	.L304-.L134,.L209-.L134
+	.half	1
+	.byte	82
+	.word	0,0
+.L215:
+	.word	-1,.L134,.L265-.L134,.L36-.L134
+	.half	1
+	.byte	90
+	.word	.L261-.L134,.L259-.L134
+	.half	1
+	.byte	84
+	.word	.L268-.L134,.L267-.L134
+	.half	1
+	.byte	84
+	.word	.L276-.L134,.L275-.L134
+	.half	1
+	.byte	84
+	.word	.L284-.L134,.L283-.L134
+	.half	1
+	.byte	84
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('fifo_write_element')
+	.sect	'.debug_loc'
+.L207:
+	.word	-1,.L132,0,.L255-.L132
+	.half	1
+	.byte	84
+	.word	.L21-.L132,.L29-.L132
+	.half	1
+	.byte	84
+	.word	0,0
+.L206:
+	.word	-1,.L132,0,.L256-.L132
+	.half	1
+	.byte	100
+	.word	.L257-.L132,.L205-.L132
+	.half	1
+	.byte	111
+	.word	.L21-.L132,.L29-.L132
+	.half	1
+	.byte	100
+	.word	0,0
+.L131:
+	.word	-1,.L132,0,.L205-.L132
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L208:
+	.word	-1,.L132,.L18-.L132,.L205-.L132
+	.half	1
+	.byte	88
+	.word	.L258-.L132,.L205-.L132
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L721:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('fifo_head_offset')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L721,.L124,.L244-.L124
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('fifo_end_offset')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L721,.L126,.L247-.L126
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('fifo_clear')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L721,.L128,.L198-.L128
+	.sdecl	'.debug_frame',debug,cluster('fifo_used')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L721,.L130,.L203-.L130
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('fifo_write_element')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L721,.L132,.L205-.L132
+	.sdecl	'.debug_frame',debug,cluster('fifo_write_buffer')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L721,.L134,.L209-.L134
+	.sdecl	'.debug_frame',debug,cluster('fifo_read_element')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L721,.L136,.L216-.L136
+	.sdecl	'.debug_frame',debug,cluster('fifo_read_buffer')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L721,.L138,.L222-.L138
+	.sdecl	'.debug_frame',debug,cluster('fifo_read_tail_buffer')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L721,.L140,.L230-.L140
+	.sdecl	'.debug_frame',debug,cluster('fifo_init')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L721,.L142,.L237-.L142
+	.byte	8,18,8,19,8,22,8,23
+	; Module end

@@ -11,8 +11,8 @@
 #define MOTORA_ON         gpio_init(stop1, GPO, GPIO_HIGH, GPO_PUSH_PULL);       // 停止（刹车线）
 #define MOTORB_ON         gpio_init(stop2, GPO, GPIO_HIGH, GPO_PUSH_PULL);       // 停止（刹车线）
 
-unsigned char  Start_Flag=0;                    //启动标志
-unsigned char  show_flag=0;                     //显示标志
+unsigned char  Start_Flag=2;                    //启动标志
+// unsigned char  show_flag=0;                     //显示标志
 
 // Status_car status_car = idle;                   //小车状态 一开始为空闲状态
 // Element element = nothing;                      //赛道元素 一开始为默认
@@ -73,16 +73,21 @@ void Balance(void)
     getKalmanPosition(&Pitch,&Roll,&Yaw,&gyrox,&gyroy,&gyroz);//获取姿态信息
 
 /************************保持直立以及转向运算*********************************************************************************************************************************/
-    PWM_R = P_balance_Control(Roll, Roll_Zero, gyroy);
+    PWM_R = R_balance_Control(Roll, Roll_Zero, gyroy);
     // float temp=Roll-Roll_Zero;
     // printf("%f,%f,%f,%f,",Roll,Roll_Zero,temp,P_Balance_KP);
-    Motor_A = (short)+PWM_R + PWM_Y /*+ PWMA_accel*/;                                //最终控制量
+    if(++Flag_I==30)
+    {
+        PWM_Y = Y_balance_Control(/*error_of_CameraOrBalance*/0, 0,gyro[2]);     //A B电机控制Z轴转动
+        Flag_I=0;
+    }
+    Motor_A = (short)+PWM_R + PWM_Y /*+ PWMA_accel*/;                                //最终控制量   PWM_Y?
     Motor_B = (short)-PWM_R + PWM_Y /*+ PWMA_accel*/;                                //最终控制量
 #ifdef cascade_pid
     Motor_C = R_Cascade_Pid_Ctrl(Roll_Zero);
 #else
     PWMC_accel = Velocity_Control_C(Encoder_C);                             //C电机速度环正反馈
-    Motor_C = -P_balance_Control(Roll, Roll_Zero, gyroz) + PWMC_accel;    //C电机控制前后倾角
+    Motor_C = -P_balance_Control(Pitch, Pitch_Zero, gyroz) + PWMC_accel;    //C电机控制前后倾角
 #endif
 
 /*************************保护与限幅******************************************************************************************************************************/
@@ -112,12 +117,10 @@ void Balance(void)
     else if(Start_Flag==2)
     {
         MOTORA_ON;
-        MOTORB_ON;                                       //刹车
+        MOTORB_ON;                                     
         MotorCtrl3W(Motor_A, Motor_B, Motor_C);         //飞轮 独轮都启动
     }
 
-
-    // printf("%f\n",Motor_A);
 }
 
 /*Roll方向调节*/

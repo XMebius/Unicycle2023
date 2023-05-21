@@ -17,9 +17,7 @@ void device_init()
     /*初始化动量轮状态*/
     gpio_init(stop1, GPO, GPIO_HIGH, GPO_PUSH_PULL);
     gpio_init(stop2, GPO, GPIO_HIGH, GPO_PUSH_PULL);
-    gpio_init(Nsleep, GPO, GPIO_LOW, GPO_PUSH_PULL);
-
-    /*初始化行进车轮的使能引脚,为高时可以工作*/
+    gpio_init(Nsleep, GPO, GPIO_HIGH, GPO_PUSH_PULL); /*初始化行进车轮的使能引脚,为高时可以工作*/
 
     /*初始化三个编码器*/
     encoder_dir_init(ENCODER_1_DIR, ENCODER_1_DIR_PULSE, ENCODER_1_DIR_DIR);
@@ -37,19 +35,20 @@ void device_init()
     wireless_uart_init();
 
     /*初始化PWM波通道*/
-    pwm_init(PWM_CH1, 17000, 8000);
-    pwm_init(PWM_CH2, 17000, 8000);
-    pwm_init(PWM_CH3, 17000, 500);
+    pwm_init(PWM_CH1, 17000, 0);
+    pwm_init(PWM_CH2, 17000, 0);
+    pwm_init(PWM_CH3, 17000, 0);
 
 
     /*初始化定时器中断*/
     pit_ms_init(PIT0,100);
-    pit_us_init(PIT1,5000);     // 5ms
+    pit_ms_init(PIT1,15);     // 10ms
 
 //    /*初始化串口接收中断*/
     uart_init(UART_2,115200,WIRELESS_UART_RX_PIN,WIRELESS_UART_TX_PIN);
     uart_rx_interrupt(UART_2,1);
 }
+
 
 int core0_main(void)
 {
@@ -58,7 +57,7 @@ int core0_main(void)
     device_init();
     cpu_wait_event_ready();         // 等待所有核心初始化完毕
 	while (TRUE) {
-
+//        MotorCtrl3W(3000,3000,500);
 	}
 }
 

@@ -11,7 +11,7 @@
 
 //
 extern float Pitch,Roll,Yaw;
-extern float gyrox,gyroy,gyroz;
+extern float gyro_yaw,gyro_pitch,gyro_roll;
 extern float Move_distance;
 
 
@@ -81,7 +81,7 @@ float R_Cascade_Pid_Ctrl(float zhongzhi)
         PidLocCtrl(&Roll_angle_pid,Roll_vel_pid.out - Roll + zhongzhi);//角度环
 
     /*2ms运行一次*/
-    PidLocCtrl(&Roll_acc_pid,-gyroy + Roll_angle_pid.out);  //角速度环
+    PidLocCtrl(&Roll_acc_pid,-gyro_pitch + Roll_angle_pid.out);  //角速度环
 
     return Roll_acc_pid.out;
 }
@@ -95,7 +95,7 @@ float P_Cascade_Pid_Ctrl(float zhongzhi)
         PidLocCtrl(&Pitch_angle_pid,Pitch - zhongzhi);//角度环
     }
 
-    PidLocCtrl(&Pitch_acc_pid,+gyrox + Pitch_angle_pid.out);  //角速度环
+    PidLocCtrl(&Pitch_acc_pid,+gyro_yaw + Pitch_angle_pid.out);  //角速度环
 
     return Pitch_acc_pid.out;
 }

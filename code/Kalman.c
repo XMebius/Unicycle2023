@@ -23,7 +23,7 @@ float P[2][2] = {{ 1, 0 },{ 0, 1 }};
  * @param angle ¿¨¶ûÂüÂË²¨¹À¼ÆµÄ½Ç¶È
  * @param gyro ¿¨¶ûÂüÂË²¨¹À¼ÆµÄ½ÇËÙ¶È
  */
-void getKalmanPosition(float* Pitch,float* Roll,float* Yaw, float* gyro_x,float* gyro_y,float* gyro_z)
+void getKalmanPosition(float* Pitch,float* Roll,float* Yaw, float* gyro_x,float* gyro_Pitch,float* gyro_Roll)
 {
     icm20602_get_acc();
     icm20602_get_gyro();
@@ -39,8 +39,14 @@ void getKalmanPosition(float* Pitch,float* Roll,float* Yaw, float* gyro_x,float*
     accy=(float) icm20602_acc_y/4096;
     accz=(float) icm20602_acc_z/4096;
 
-    tjrc_kalman(accy,-gyroz,Pitch,gyro_z);
-    tjrc_kalman(accz,gyroy,Roll,gyro_y);
+    tjrc_kalman(accy,-gyroz,Pitch,gyro_Pitch);
+    tjrc_kalman(accz,gyroy,Roll,gyro_Roll);
+
+//    printf("%f,%f,%f,%f,%f,%f\n",accy*40,*Pitch,accz*40,*Roll,*gyro_Pitch,*gyro_Roll);
+
+//    tjrc_kalman(accz,gyroy,Pitch,gyro_Pitch);
+//    tjrc_kalman(accy,-gyroz,Roll,gyro_Roll);
+
 //    printf("%f,%f,",*Pitch,accy);
 //    printf("%f,%f\n",*Roll,accz);
 }

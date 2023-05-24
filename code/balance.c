@@ -35,7 +35,8 @@ int Flag_A,Flag_B,Flag_C,Flag_D,Flag_E,Flag_F,Flag_G,Flag_H,Flag_I;     //标志位
 
 short Motor_A,Motor_B,Motor_C,Motor_D;                                  //电机PWM变量
 
-short Encoder_A,Encoder_B,Encoder_C,Encoder_D;                          //编码器的脉冲计数
+short Encoder_A=2;
+short Encoder_B,Encoder_C,Encoder_D;                          //编码器的脉冲计数
 int32_t Encoder_C_Sum;                                                     //行进电机编码器的累计值
 
 int PWM_R=0,PWM_Y=0,PWMA_accel,PWMB_accel,PWMC_accel;                       //PWM中间量
@@ -43,7 +44,7 @@ int PWM_R=0,PWM_Y=0,PWMA_accel,PWMB_accel,PWMC_accel;                       //PW
 // int Voltage;  
 
 //静置后  Pitch_Zero=1.35  不静置 Pitch_Zero=3.82
-float Roll_Zero=0.094845/*0.094850~0.094830*/, Roll_Zero1=5.63;      //Roll_Zero1：记录值，龙邱的代码中Roll_Zero=-3,3,往陀螺仪方向倾斜是负数，反之为正数
+float Roll_Zero=0.094849/*0.094850~0.094840*/, Roll_Zero1=5.63;      //Roll_Zero1：记录值，龙邱的代码中Roll_Zero=-3,3,往陀螺仪方向倾斜是负数，反之为正数
 float Pitch_Zero=-0.30,Pitch_Zero1=5.63;     //Pitch_Zero1:
 //float Roll_Zero=0.0038, Roll_Zero1=5.63;      //Roll_Zero1：记录值，龙邱的代码中Roll_Zero=-3,3,往陀螺仪方向倾斜是负数，反之为正数
 //float Pitch_Zero=-0.024,Pitch_Zero1=5.63;     //Pitch_Zero1:
@@ -58,7 +59,7 @@ float R_Balance_KP=-11000/*-7550/-12000/-5600,开始出现较大幅度振荡*/, R_Balance_
 float Y_Balance_KP=-1.05  ,  Y_Balance_KI=00.0  ,  Y_Balance_KD=-25.0  ;      //AB电机旋转角度
 float R_Velocity_KP=00  ,  R_Velocity_KI=0   ;                               //AB电机速度环
 float P_Balance_KP=-760/*-850*/, P_Balance_KI=1,P_Balance_KD=-125;                //C电机前后倾角
-float P_Velocity_KP=9.15,P_Velocity_KI=0.105;                                //C电机速度环
+float P_Velocity_KP=-0.215,P_Velocity_KI=0/*-0.05*/;                                //C电机速度环
 
 ///****************************************速度为160左右*************************************************************/
 //float R_Balance_KP=-7600/*-8000/-3600,开始出现较大幅度振荡*/, R_Balance_KI=1   ,  R_Balance_KD=-760/*-820/420*/  ;          //AB电机左右倾角4500 15 275
@@ -69,7 +70,7 @@ float P_Velocity_KP=9.15,P_Velocity_KI=0.105;                                //C
 
 float Yaw_control_1,Yaw_control_2 = 0;
 float Yaw_mark;
-int Move_distance=30 , Move_distance_MAX=170;
+int Move_distance=1 , Move_distance_MAX=10;
 
 float Pitch=0.0f,Roll=0.0f,Yaw=0.0f,Pitch_temp=0.0f,Roll_temp=0.0f,Yaw_temp=0.0f;    //经过卡尔曼滤波后的姿态信息
 float gyro_yaw=0.0f,gyro_pitch=0.0f,gyro_roll=0.0f,gyro_yaw_temp=0.0f,gyro_pitch_temp=0.0f,gyro_roll_temp=0.0f;
@@ -78,24 +79,19 @@ void Balance(void)
 {
     static int num;
 /*****************基本信息采集***************************************************************************/
-    Encoder_A = encoder_get_count(ENCODER_1_DIR);   //左电机 母板上编码器1，小车前进为负值
-    Encoder_B = encoder_get_count(ENCODER_2_DIR);   //右电机 母板上编码器2，小车前进为正值
-//#ifndef cascade_pid           //串级PID的速度检测在pid函数中
-    Encoder_C = encoder_get_count(ENCODER_3_DIR);   //行进电机 母板上编码器3，小车前进为正值
-//#endif
+    Encoder_A = encoder_get_count(ENCODER_1_QUADDEC);   //左电机 母板上编码器1，小车前进为负值
+    Encoder_B = encoder_get_count(ENCODER_2_QUADDEC);   //右电机 母板上编码器2，小车前进为正值
+    Encoder_C = encoder_get_count(ENCODER_3_QUADDEC);   //行进电机 母板上编码器3，小车前进为正值
+    printf("%hd,%hd,%hd,",Encoder_A,Encoder_B,Encoder_C);  //-3500的PWM对应的encoder的值为-3330
     Encoder_C_Sum += Encoder_C;                     //行进电机编码器累加
 
     getKalmanPosition(&Pitch_temp,&Roll_temp,&Yaw_temp,&gyro_yaw_temp,&gyro_pitch_temp,&gyro_roll_temp);//获取姿态信息
-//    getKalmanPosition(&Pitch,&Roll,&Yaw,&gyro_yaw,&gyro_pitch,&gyro_roll);//获取姿态信息
     Pitch=Pitch_temp*40;
     Roll=Roll_temp*40;
     gyro_pitch=gyro_pitch_temp*20;
     gyro_roll=gyro_roll_temp*40;
-//     printf("%f,%f,%f,%f\n",Pitch,Pitch_Zero,Roll,Roll_Zero);
-//    tjrc_st7735_dispFloat32(0,0,Pitch,0xFFFF); //-0.9
-//    tjrc_st7735_dispFloat32(0,10,Roll,0xFFFF);  //0.7
+
 /************************保持直立以及转向运算*********************************************************************************************************************************/
-//    PWM_R = P_Cascade_Pid_Ctrl(Pitch_Zero);
 #ifdef cascade_pid   //串级pid
     PWM_R = P_Cascade_Pid_Ctrl(Roll_Zero);
 #else
@@ -112,8 +108,8 @@ void Balance(void)
 #ifdef cascade_pid
     Motor_C = R_Cascade_Pid_Ctrl(Pitch_Zero);
 #else
-//    PWMC_accel = Velocity_Control_C(Encoder_C);                             //C电机速度环正反馈
-    Motor_C = (short)-P_balance_Control(Pitch, Pitch_Zero, gyro_pitch);// + PWMC_accel;    //C电机控制前后倾角
+    PWMC_accel = Velocity_Control_C(Encoder_C);                             //C电机速度环正反馈
+    Motor_C = (short)-P_balance_Control(Pitch, Pitch_Zero, gyro_pitch) + PWMC_accel;    //C电机控制前后倾角
 //    printf("%hd,%f,%d\n",Motor_C,gyro_pitch,Start_Flag);
 #endif
 
@@ -128,7 +124,7 @@ void Balance(void)
 //    else if(Motor_C<0) Motor_C = Motor_C - 120;
 //    printf("%f,%f\n",gyro_pitch,Motor_C);
     Motor_C = constrain_short(Motor_C, -3500, 3500);                       //PWM限幅
-//    printf("%f,%f,%f,%f,%f,%f\n",Pitch,Pitch_Zero,gyro_pitch,Motor_A,Motor_B,Motor_C);
+    printf("%hd\n",Motor_C);
     /************************电机控制****************************************************************************************************************************/
     if(Start_Flag==0)
     {
@@ -159,7 +155,9 @@ void Balance(void)
         MotorCtrl3W(Motor_A, Motor_B, Motor_C);         //飞轮 独轮都启动
     }
 
-
+    encoder_clear_count(ENCODER_1_QUADDEC);
+    encoder_clear_count(ENCODER_2_QUADDEC);
+    encoder_clear_count(ENCODER_3_QUADDEC);
 }
 /**************************************************************************
 X轴平衡PID控制,角度环

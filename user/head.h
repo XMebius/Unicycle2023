@@ -27,17 +27,17 @@
 #define PIT1                            (CCU61_CH0 )
 
 /*±àÂëÆ÷*/
-#define ENCODER_1_DIR                     (TIM2_ENCOEDER)
-#define ENCODER_1_DIR_PULSE               (TIM2_ENCOEDER_CH1_P33_7)
-#define ENCODER_1_DIR_DIR                 (TIM2_ENCOEDER_CH2_P33_6)
+#define ENCODER_1_QUADDEC                 (TIM2_ENCOEDER)
+#define ENCODER_1_QUADDEC_A               (TIM2_ENCOEDER_CH1_P33_7)
+#define ENCODER_1_QUADDEC_B               (TIM2_ENCOEDER_CH2_P33_6)
 
-#define ENCODER_2_DIR                     (TIM6_ENCOEDER)
-#define ENCODER_2_DIR_PULSE               (TIM6_ENCOEDER_CH1_P20_3)
-#define ENCODER_2_DIR_DIR                 (TIM6_ENCOEDER_CH2_P20_0)
+#define ENCODER_2_QUADDEC                 (TIM6_ENCOEDER)
+#define ENCODER_2_QUADDEC_A               (TIM6_ENCOEDER_CH1_P20_3)
+#define ENCODER_2_QUADDEC_B               (TIM6_ENCOEDER_CH2_P20_0)
 
-#define ENCODER_3_DIR                     (TIM5_ENCOEDER)
-#define ENCODER_3_DIR_PULSE               (TIM5_ENCOEDER_CH1_P10_3)
-#define ENCODER_3_DIR_DIR                 (TIM5_ENCOEDER_CH2_P10_1)
+#define ENCODER_3_QUADDEC                 (TIM5_ENCOEDER)
+#define ENCODER_3_QUADDEC_A               (TIM5_ENCOEDER_CH1_P10_3)
+#define ENCODER_3_QUADDEC_B               (TIM5_ENCOEDER_CH2_P10_1)
 
 /*ÎÞÏß´®¿Ú*/
 #define WIRELESS_UART_INDEX         (UART_2)

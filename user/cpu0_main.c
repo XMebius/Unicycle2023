@@ -20,9 +20,9 @@ void cpu0_device_init()
     gpio_init(Nsleep, GPO, GPIO_HIGH, GPO_PUSH_PULL); /*初始化行进车轮的使能引脚,为高时可以工作*/
 
     /*初始化三个编码器*/
-    encoder_dir_init(ENCODER_1_DIR, ENCODER_1_DIR_PULSE, ENCODER_1_DIR_DIR);
-    encoder_dir_init(ENCODER_2_DIR, ENCODER_2_DIR_PULSE, ENCODER_2_DIR_DIR);
-    encoder_dir_init(ENCODER_3_DIR, ENCODER_3_DIR_PULSE, ENCODER_3_DIR_DIR);
+    encoder_quad_init(ENCODER_1_QUADDEC, ENCODER_1_QUADDEC_A, ENCODER_1_QUADDEC_B);
+    encoder_quad_init(ENCODER_2_QUADDEC, ENCODER_2_QUADDEC_A, ENCODER_2_QUADDEC_B);
+    encoder_quad_init(ENCODER_3_QUADDEC, ENCODER_3_QUADDEC_A, ENCODER_3_QUADDEC_B);
 
     /*初始化陀螺仪*/
     icm20602_init();
@@ -35,12 +35,11 @@ void cpu0_device_init()
     pwm_init(PWM_CH2, 17000, 10000);
     pwm_init(PWM_CH3, 17000, 0);
 
-
     /*初始化定时器中断*/
-    pit_ms_init(PIT0,100);
+//    pit_ms_init(PIT0,100);
     pit_ms_init(PIT1,15);     // 10ms
 
-//    /*初始化串口接收中断*/
+    /*初始化串口接收中断*/
     uart_init(UART_2,115200,WIRELESS_UART_RX_PIN,WIRELESS_UART_TX_PIN);
     uart_rx_interrupt(UART_2,1);
 
@@ -54,7 +53,6 @@ int core0_main(void)
     cpu0_device_init();
     cpu_wait_event_ready();         // 等待所有核心初始化完毕
 	while (TRUE) {
-//        MotorCtrl3W(3000,3000,500);
 	}
 }
 

@@ -1,7 +1,7 @@
 #pragma section all "cpu0_dsram"
 #include "head.h"
 
-void device_init()
+void cpu0_device_init()
 {
     /*初始化四个指示灯*/
     gpio_init(LED1, GPO, GPIO_LOW, GPO_PUSH_PULL);
@@ -24,10 +24,6 @@ void device_init()
     encoder_dir_init(ENCODER_2_DIR, ENCODER_2_DIR_PULSE, ENCODER_2_DIR_DIR);
     encoder_dir_init(ENCODER_3_DIR, ENCODER_3_DIR_PULSE, ENCODER_3_DIR_DIR);
 
-    /*屏幕初始化*/
-    tjrc_setSt7735();
-    tjrc_st7735_clean(0X5458);//设置背景颜色为GBLUE
-
     /*初始化陀螺仪*/
     icm20602_init();
 
@@ -35,8 +31,8 @@ void device_init()
     wireless_uart_init();
 
     /*初始化PWM波通道*/
-    pwm_init(PWM_CH1, 17000, 0);
-    pwm_init(PWM_CH2, 17000, 0);
+    pwm_init(PWM_CH1, 17000, 10000);
+    pwm_init(PWM_CH2, 17000, 10000);
     pwm_init(PWM_CH3, 17000, 0);
 
 
@@ -47,6 +43,7 @@ void device_init()
 //    /*初始化串口接收中断*/
     uart_init(UART_2,115200,WIRELESS_UART_RX_PIN,WIRELESS_UART_TX_PIN);
     uart_rx_interrupt(UART_2,1);
+
 }
 
 
@@ -54,7 +51,7 @@ int core0_main(void)
 {
     clock_init();                   // 获取时钟频率
     debug_init();                   // 初始化默认调试串口
-    device_init();
+    cpu0_device_init();
     cpu_wait_event_ready();         // 等待所有核心初始化完毕
 	while (TRUE) {
 //        MotorCtrl3W(3000,3000,500);

@@ -53,12 +53,12 @@
 
 #include "zf_device_type.h"
 
-#define TFT180_USE_SOFT_SPI             (0)                                     // 默认使用硬件 SPI 方式驱动 建议使用硬件 SPI 方式驱动
+#define TFT180_USE_SOFT_SPI             (1)                                     // 默认使用硬件 SPI 方式驱动 建议使用硬件 SPI 方式驱动
 #if TFT180_USE_SOFT_SPI                                                         // 这两段 颜色正常的才是正确的 颜色灰的就是没有用的
 //====================================================软件 SPI 驱动====================================================
 #define TFT180_SOFT_SPI_DELAY           (0 )                                    // 软件 SPI 的时钟延时周期 数值越小 SPI 通信速率越快
-#define TFT180_SCL_PIN                  (P15_3)                                 // 软件 SPI SCK 引脚
-#define TFT180_SDA_PIN                  (P15_5)                                 // 软件 SPI MOSI 引脚
+#define TFT180_SCL_PIN                  (P33_9)                                 // 软件 SPI SCK 引脚
+#define TFT180_SDA_PIN                  (P33_8)                                 // 软件 SPI MOSI 引脚
 //====================================================软件 SPI 驱动====================================================
 #else
 //====================================================硬件 SPI 驱动====================================================
@@ -70,10 +70,10 @@
 //====================================================硬件 SPI 驱动====================================================
 #endif
 
-#define TFT180_RES_PIN                  (P15_1)                                 // 液晶复位引脚定义
-#define TFT180_DC_PIN                   (P15_0)                                 // 液晶命令位引脚定义
-#define TFT180_CS_PIN                   (P15_2)                                 // CS 片选引脚
-#define TFT180_BL_PIN                   (P15_4)                                 // 液晶背光引脚定义
+#define TFT180_RES_PIN                  (P33_12)                                 // 液晶复位引脚定义
+#define TFT180_DC_PIN                   (P33_11)                                 // 液晶命令位引脚定义
+#define TFT180_CS_PIN                   (P33_10)                                 // CS 片选引脚
+#define TFT180_BL_PIN                   (P33_13)                                 // 液晶背光引脚定义
 
 #define TFT180_DEFAULT_DISPLAY_DIR      (TFT180_PORTAIT)                        // 默认的显示方向
 #define TFT180_DEFAULT_PENCOLOR         (RGB565_RED)                            // 默认的画笔颜色

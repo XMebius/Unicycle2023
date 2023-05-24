@@ -91,7 +91,7 @@ void Balance(void)
     Roll=Roll_temp*40;
     gyro_pitch=gyro_pitch_temp*20;
     gyro_roll=gyro_roll_temp*40;
-     printf("%f,%f,%f,%f\n",Pitch,Pitch_Zero,Roll,Roll_Zero);
+//     printf("%f,%f,%f,%f\n",Pitch,Pitch_Zero,Roll,Roll_Zero);
 //    tjrc_st7735_dispFloat32(0,0,Pitch,0xFFFF); //-0.9
 //    tjrc_st7735_dispFloat32(0,10,Roll,0xFFFF);  //0.7
 /************************保持直立以及转向运算*********************************************************************************************************************************/

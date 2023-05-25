@@ -7,10 +7,10 @@
 
 #ifndef CODE_BALANCE_H_
 #define CODE_BALANCE_H_
-//#define cascade_pid
+
+#define cascade_pid
+
 #include "head.h"
-
-
 
 void Balance(void);
 float R_balance_Control(float Angle,float *Angle_Zero,float Gyro);

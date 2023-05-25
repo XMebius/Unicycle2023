@@ -45,7 +45,7 @@ int PWM_R=0,PWM_Y=0,PWMA_accel,PWMB_accel,PWMC_accel;                       //PW
 
 //静置后  Pitch_Zero=1.35  不静置 Pitch_Zero=3.82
 float Roll_Zero=0.2/*0.15~0.2*//*0.094850~0.094860*//*, Roll_Zero1=5.63*/;       //面前，远离陀螺仪位置，往前Roll变小，往后roll变大
-float Pitch_Zero=-0.255/*2.080*//*2.050~2.095*//*,Pitch_Zero1=5.63*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
+float Pitch_Zero=-0.245/*2.080*//*2.050~2.095*//*,Pitch_Zero1=5.63*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
 //float Roll_Zero=0.0038, Roll_Zero1=5.63;      //Roll_Zero1：记录值，龙邱的代码中Roll_Zero=-3,3,往陀螺仪方向倾斜是负数，反之为正数
 //float Pitch_Zero=-0.024,Pitch_Zero1=5.63;     //Pitch_Zero1:
 float Yaw_Zero=0.0;                     //XY轴角度零点，与机械有关，影响稳定性
@@ -81,9 +81,11 @@ void Balance(void)
 /*****************基本信息采集***************************************************************************/
     Encoder_A = encoder_get_count(ENCODER_1_QUADDEC);   //左电机 母板上编码器1，小车前进为负值
     Encoder_B = encoder_get_count(ENCODER_2_QUADDEC);   //右电机 母板上编码器2，小车前进为正值
+#ifndef cascade_pid
     Encoder_C = encoder_get_count(ENCODER_3_QUADDEC);   //行进电机 母板上编码器3，小车前进为正值
+#endif
 //    printf("%hd,%hd,%hd,",Encoder_A,Encoder_B,Encoder_C);  //-3500的PWM对应的encoder的值为-3330
-    printf("%f,",Encoder_C);
+    // printf("%f,",Encoder_C);
     Encoder_C_Sum += Encoder_C;                     //行进电机编码器累加
 
     getKalmanPosition(&Pitch_temp,&Roll_temp,&Yaw_temp,&gyro_yaw_temp,&gyro_pitch_temp,&gyro_roll_temp);//获取姿态信息
@@ -93,10 +95,10 @@ void Balance(void)
     gyro_roll=gyro_roll_temp*40;
 //    printf("%f,%f",Pitch,gyro_pitch);
     float temp=Pitch-Pitch_Zero;
-    printf("%f,%f,",temp,Roll);
+//    printf("%f,%f,",temp,Roll);
 /************************保持直立以及转向运算*********************************************************************************************************************************/
 #ifdef cascade_pid   //串级pid
-    PWM_R = P_Cascade_Pid_Ctrl(Roll_Zero);
+    PWM_R = R_Cascade_Pid_Ctrl(Roll_Zero);
 #else
     PWM_R = R_balance_Control(Roll, &Roll_Zero, gyro_roll);
 #endif
@@ -109,7 +111,7 @@ void Balance(void)
     Motor_A = (short)+PWM_R ;//+ PWM_Y /*+ PWMA_accel*/;                                //最终控制量   PWM_Y?
     Motor_B = (short)-PWM_R ;//+ PWM_Y /*+ PWMA_accel*/;                                //最终控制量
 #ifdef cascade_pid
-    Motor_C = R_Cascade_Pid_Ctrl(Pitch_Zero);
+    Motor_C = P_Cascade_Pid_Ctrl(Pitch_Zero);
 #else
     PWMC_accel = Velocity_Control_C(Encoder_C);                             //C电机速度环正反馈
     Motor_C = (short)-P_balance_Control(Pitch, Pitch_Zero, gyro_pitch) + PWMC_accel;    //C电机控制前后倾角
@@ -120,14 +122,14 @@ void Balance(void)
     Roll_error = Roll - Roll_Zero;
     Pitch_error = Pitch - Pitch_Zero;
     //超过特定角度停止运行
-    if(fabs(Roll_error)>15 || fabs(Pitch_error)>12){ Motor_A =0,Motor_B =0,Motor_C =0,Start_Flag=0;MOTORA_OFF;MOTORB_OFF;MOTORC_OFF;}
+    if(fabs(Roll_error)>15 || fabs(Pitch_error)>15){ Motor_A =0,Motor_B =0,Motor_C =0,Start_Flag=0;MOTORA_OFF;MOTORB_OFF;MOTORC_OFF;}
     Motor_A = constrain_short(Motor_A, -10000, 10000);                     //PWM限幅
     Motor_B = constrain_short(Motor_B, -10000, 10000);                     //PWM限幅
 //    if(Motor_C>0) Motor_C = Motor_C + 120;
 //    else if(Motor_C<0) Motor_C = Motor_C - 120;
 //    printf("%f,%f\n",gyro_pitch,Motor_C);
-    Motor_C = constrain_short(Motor_C, -3500, 3500);                       //PWM限幅
-    printf("%hd\n",Motor_C);
+    Motor_C = constrain_short(Motor_C, -3400, 3400);                       //PWM限幅
+    printf("%hd,%hd,%hd\n",Motor_A,Motor_B,Motor_C);
     /************************电机控制****************************************************************************************************************************/
     if(Start_Flag==0)
     {

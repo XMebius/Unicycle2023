@@ -43,6 +43,10 @@ void cpu0_device_init()
     uart_init(UART_2,115200,WIRELESS_UART_RX_PIN,WIRELESS_UART_TX_PIN);
     uart_rx_interrupt(UART_2,1);
 
+#ifdef cascade_pid
+    My_Pid_P_Init();
+    My_Pid_R_Init();
+#endif
 }
 
 

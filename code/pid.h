@@ -42,7 +42,7 @@ void R_Angle_Pid_Init(pid_param_t * pid);
 
 float constrain_float(float amt, float low, float high);
 short constrain_short(short amt, short low, short high);
-float PidLocCtrl(pid_param_t * pid, float error);
+float PidLocCtrl(pid_param_t * pid, float error, float dot_error);
 
 float PidIncCtrl(pid_param_t * pid, float error);
 

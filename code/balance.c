@@ -45,7 +45,7 @@ int PWM_R=0,PWM_Y=0,PWMA_accel,PWMB_accel,PWMC_accel;                       //PW
 
 //静置后  Pitch_Zero=1.35  不静置 Pitch_Zero=3.82
 float Roll_Zero=0.2/*0.15~0.2*//*0.094850~0.094860*//*, Roll_Zero1=5.63*/;       //面前，远离陀螺仪位置，往前Roll变小，往后roll变大
-float Pitch_Zero=-0.245/*2.080*//*2.050~2.095*//*,Pitch_Zero1=5.63*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
+float Pitch_Zero=-1.550/*-0.265*//*2.050~2.095*//*,Pitch_Zero1=5.63*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
 //float Roll_Zero=0.0038, Roll_Zero1=5.63;      //Roll_Zero1：记录值，龙邱的代码中Roll_Zero=-3,3,往陀螺仪方向倾斜是负数，反之为正数
 //float Pitch_Zero=-0.024,Pitch_Zero1=5.63;     //Pitch_Zero1:
 float Yaw_Zero=0.0;                     //XY轴角度零点，与机械有关，影响稳定性
@@ -86,7 +86,7 @@ void Balance(void)
 #endif
 //    printf("%hd,%hd,%hd,",Encoder_A,Encoder_B,Encoder_C);  //-3500的PWM对应的encoder的值为-3330
     // printf("%f,",Encoder_C);
-    Encoder_C_Sum += Encoder_C;                     //行进电机编码器累加
+//    Encoder_C_Sum += Encoder_C;                     //行进电机编码器累加
 
     getKalmanPosition(&Pitch_temp,&Roll_temp,&Yaw_temp,&gyro_yaw_temp,&gyro_pitch_temp,&gyro_roll_temp);//获取姿态信息
     Pitch=Pitch_temp*40;
@@ -128,7 +128,7 @@ void Balance(void)
 //    if(Motor_C>0) Motor_C = Motor_C + 120;
 //    else if(Motor_C<0) Motor_C = Motor_C - 120;
 //    printf("%f,%f\n",gyro_pitch,Motor_C);
-    Motor_C = constrain_short(Motor_C, -3400, 3400);                       //PWM限幅
+    Motor_C = constrain_short(Motor_C, -3500, 3500);                       //PWM限幅
     printf("%hd,%hd,%hd\n",Motor_A,Motor_B,Motor_C);
     /************************电机控制****************************************************************************************************************************/
     if(Start_Flag==0)

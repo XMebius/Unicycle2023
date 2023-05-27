@@ -1,4 +1,4 @@
-#include "zf_common_headfile.h"
+#include "head.h"
 #pragma section all "cpu1_dsram"
 
 void cpu1_device_init()
@@ -13,7 +13,14 @@ void cpu1_device_init()
     /*电磁传感初始化*/
 
 }
+void camera_service(){
+    // 显示灰度图像
+    tft180_displayimage03x((const uint8 *)mt9v03x_image, 160, 128);
+    uint8* image_in=mt9v03x_image;
 
+    uint8* image_out = tjrc_imageProc(image_in);
+
+}
 void core1_main(void)
 {
     disable_Watchdog();                     // 关闭看门狗
@@ -22,7 +29,8 @@ void core1_main(void)
     cpu_wait_event_ready();
     while (TRUE)
     {
-        tft180_displayimage03x((const uint8 *)mt9v03x_image, 160, 128);
+        // tft180_displayimage03x((const uint8 *)mt9v03x_image, 160, 128);
+        camera_service();
     }
 }
 #pragma section all restore

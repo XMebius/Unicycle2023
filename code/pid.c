@@ -48,40 +48,13 @@ void My_Pid_R_Init(void)
 
 float P_Cascade_Pid_Ctrl(float zhongzhi)
 {
-    static int16_t Pid_t;
-    Pid_t = Pid_t+15;
-    if(Pid_t % 150==0){
-        Pid_t = 0;
-        Encoder_C = encoder_get_count(ENCODER_3_QUADDEC);   //行进电机编码器
-        /*150ms运行一次*/  
-        PidLocCtrl(&Pitch_vel_pid, (Encoder_C*5/32)-Move_distance);   //速度环,期望速度为Move_distance
-    }
-    if(Pid_t % 30 == 0)
-        /*30ms运行一次*/
-        PidLocCtrl(&Pitch_angle_pid,Pitch_vel_pid.out - Pitch + zhongzhi);//角度环
-
-    /*15ms运行一次*/
-    // PidLocCtrl(&Pitch_acc_pid,-gyro_pitch + Pitch_angle_pid.out);  //角速度环
-
-    // return Pitch_acc_pid.out;
+    PidLocCtrl(&Pitch_angle_pid,Pitch-zhongzhi,gyro_pitch);//角度环
     return Pitch_angle_pid.out;
 }
 
 float R_Cascade_Pid_Ctrl(float zhongzhi)
 {
-    static int16_t Pid_t = 0;
-    Pid_t = Pid_t+15;
-    // 1/2
-    // if(Pid_t % 30 == 0){
-    //     Pid_t = 0;
-    //     PidLocCtrl(&Roll_angle_pid,Roll - zhongzhi);//角度环
-    // }
-
-    PidLocCtrl(&Roll_angle_pid,Roll - zhongzhi);//角度环
-    
-    // PidLocCtrl(&Roll_acc_pid,+gyro_yaw + Roll_angle_pid.out);  //角速度环
-
-    // return Roll_acc_pid.out;
+    PidLocCtrl(&Roll_angle_pid,Roll-zhongzhi, gyro_roll);//角度环
     return Roll_angle_pid.out;
 }
 
@@ -89,7 +62,7 @@ void R_Angle_Pid_Init(pid_param_t * pid)
 {
     pid->kp        = -15400;//90
     pid->ki        = 0.0;
-    pid->kd        = -6150/*-4150*/;
+    pid->kd        = -415/*-4150*/;
     pid->imax      = 120;
 
     pid->out_p     = 0;
@@ -105,9 +78,9 @@ void R_Angle_Pid_Init(pid_param_t * pid)
 /*串级PID参数*/
 void P_Angle_Pid_Init(pid_param_t * pid)
 {
-    pid->kp        = -170;//90
+    pid->kp        = 2350;//>3500
     pid->ki        = 0.0;
-    pid->kd        = -60;
+    pid->kd        = 0;
     pid->imax      = 30;
 
     pid->out_p     = 0;
@@ -199,7 +172,7 @@ void PidInit(pid_param_t * pid)
   * @param    pid     pid参数
   * @param    error   pid输入误差
   */
-float PidLocCtrl(pid_param_t * pid, float error)
+float PidLocCtrl(pid_param_t* pid,float error,float dot_error)
 {
     /* 累积误差 */
     pid->integrator += error;
@@ -210,34 +183,9 @@ float PidLocCtrl(pid_param_t * pid, float error)
 
     pid->out_p = pid->kp * error;
     pid->out_i = pid->ki * pid->integrator;
-    pid->out_d = pid->kd * (error - pid->last_error);
-//    pid->out_d = pid->kd * gyro_roll;
-    pid->last_error = error;
+    pid->out_d = pid->kd * dot_error;
 
     pid->out = pid->out_p + pid->out_i + pid->out_d;
 
     return pid->out;
 }
-
-
-/*!
-  * @brief    pid增量式控制器输出
-  * @param    pid     pid参数
-  * @param    error   pid输入误差
-  * @return   PID输出结果   注意输出结果已经包涵了上次结果
-  */
-float PidIncCtrl(pid_param_t * pid, float error)
-{
-
-    pid->out_p = pid->kp * error;
-    pid->out_i = pid->ki * (error - pid->last_error);
-    pid->out_d = pid->kd * ((error - pid->last_error) - pid->last_derivative);
-
-    pid->last_derivative = error - pid->last_error;
-    pid->last_error = error;
-
-    pid->out += pid->out_p + pid->out_i + pid->out_d;
-
-    return pid->out;
-}
-

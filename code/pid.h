@@ -37,12 +37,12 @@ float R_Cascade_Pid_Ctrl(float zhongzhi);
 void P_Acc_Pid_Init(pid_param_t * pid);
 void P_Angle_Pid_Init(pid_param_t * pid);
 void P_Vel_Pid_Init(pid_param_t * pid);
-void R_Acc_Pid_Init(pid_param_t * pid);
+void R_Vel_Pid_Init(pid_param_t * pid);
 void R_Angle_Pid_Init(pid_param_t * pid);
 
 float constrain_float(float amt, float low, float high);
 short constrain_short(short amt, short low, short high);
-float PidLocCtrl(pid_param_t * pid, float error/*, float dot_error*/);
+float PidLocCtrl(pid_param_t * pid, float error, float dot_error);
 
 float PidIncCtrl(pid_param_t * pid, float error);
 

@@ -54,7 +54,7 @@ uint8_t *tjrc_imageProc(const uint8_t *image_p)
     tjrc_binarization_getBinImage(threshold_smooth, image_p, image_bin_p, IMAGE_WIDTH, IMAGE_HEIGHT);
 
     // 显示二值化后的图像
-    printf("%d,%d\n",threshold_smooth,IMAGE_WIDTH);
+//    printf("%d,%d\n",threshold_smooth,IMAGE_WIDTH);
 
 
     /* 第二步：搜线*/

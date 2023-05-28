@@ -44,8 +44,8 @@ int PWM_R=0,PWM_Y=0,PWMA_accel,PWMB_accel,PWMC_accel;                       //PW
 // int Voltage;  
 
 //静置后  Pitch_Zero=1.35  不静置 Pitch_Zero=3.82
-float Roll_Zero=0.2/*0.15~0.2*//*0.094850~0.094860*//*, Roll_Zero1=5.63*/;       //面前，远离陀螺仪位置，往前Roll变小，往后roll变大
-float Pitch_Zero=-1.550/*-0.265*//*2.050~2.095*//*,Pitch_Zero1=5.63*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
+float Roll_Zero=0.03/*0.15~0.2*//*0.094850~0.094860*//*, Roll_Zero1=5.63*/;       //面前，远离陀螺仪位置，往前Roll变小，往后roll变大
+float Pitch_Zero=-1.640/*-0.265*//*2.050~2.095*//*,Pitch_Zero1=5.63*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
 //float Roll_Zero=0.0038, Roll_Zero1=5.63;      //Roll_Zero1：记录值，龙邱的代码中Roll_Zero=-3,3,往陀螺仪方向倾斜是负数，反之为正数
 //float Pitch_Zero=-0.024,Pitch_Zero1=5.63;     //Pitch_Zero1:
 float Yaw_Zero=0.0;                     //XY轴角度零点，与机械有关，影响稳定性
@@ -70,7 +70,7 @@ float P_Velocity_KP=0/*-0.287*//*2.287*/,P_Velocity_KI=0/*-0.05*/;              
 
 float Yaw_control_1,Yaw_control_2 = 0;
 float Yaw_mark;
-int Move_distance=0 /*, Move_distance_MAX=10*/;
+int P_Move_distance=0 , R_Move_distance = 0/*, Move_distance_MAX=10*/;
 
 float Pitch=0.0f,Roll=0.0f,Yaw=0.0f,Pitch_temp=0.0f,Roll_temp=0.0f,Yaw_temp=0.0f;    //经过卡尔曼滤波后的姿态信息
 float gyro_yaw=0.0f,gyro_pitch=0.0f,gyro_roll=0.0f,gyro_yaw_temp=0.0f,gyro_pitch_temp=0.0f,gyro_roll_temp=0.0f;
@@ -79,9 +79,9 @@ void Balance(void)
 {
     static int num;
 /*****************基本信息采集***************************************************************************/
+#ifndef cascade_pid
     Encoder_A = encoder_get_count(ENCODER_1_QUADDEC);   //左电机 母板上编码器1，小车前进为负值
     Encoder_B = encoder_get_count(ENCODER_2_QUADDEC);   //右电机 母板上编码器2，小车前进为正值
-#ifndef cascade_pid
     Encoder_C = encoder_get_count(ENCODER_3_QUADDEC);   //行进电机 母板上编码器3，小车前进为正值
 #endif
 //    printf("%hd,%hd,%hd,",Encoder_A,Encoder_B,Encoder_C);  //-3500的PWM对应的encoder的值为-3330
@@ -111,7 +111,7 @@ void Balance(void)
     Motor_A = (short)+PWM_R ;//+ PWM_Y /*+ PWMA_accel*/;                                //最终控制量   PWM_Y?
     Motor_B = (short)-PWM_R ;//+ PWM_Y /*+ PWMA_accel*/;                                //最终控制量
 #ifdef cascade_pid
-    Motor_C = P_Cascade_Pid_Ctrl(Pitch_Zero);
+    Motor_C = (short)P_Cascade_Pid_Ctrl(Pitch_Zero);
 #else
     PWMC_accel = Velocity_Control_C(Encoder_C);                             //C电机速度环正反馈
     Motor_C = (short)-P_balance_Control(Pitch, Pitch_Zero, gyro_pitch) + PWMC_accel;    //C电机控制前后倾角
@@ -129,7 +129,7 @@ void Balance(void)
 //    else if(Motor_C<0) Motor_C = Motor_C - 120;
 //    printf("%f,%f\n",gyro_pitch,Motor_C);
     Motor_C = constrain_short(Motor_C, -3500, 3500);                       //PWM限幅
-    printf("%hd,%hd,%hd\n",Motor_A,Motor_B,Motor_C);
+//    printf("%hd,%hd,%hd\n",Motor_A,Motor_B,Motor_C);
     /************************电机控制****************************************************************************************************************************/
     if(Start_Flag==0)
     {
@@ -256,19 +256,20 @@ float Velocity_Control_B(int encoder)
 /**************************************************************************
 C电机速度PI控制,速度正反馈环
 **************************************************************************/
-float Velocity_Control_C(int encoder)
-{
-    static float Encoder,Encoder_Integral;
-    float Velocity,Encoder_Least;
+//float Velocity_Control_C(int encoder)
+//{
+//    static float Encoder,Encoder_Integral;
+//    float Velocity,Encoder_Least;
+//
+//    Encoder_Least = (float)encoder- (float)Move_distance;                                  //速度滤波
+//    Encoder *= 0.7;                                                            //一阶低通滤波器
+//    Encoder += Encoder_Least*0.3;                                              //一阶低通滤波器
 
-    Encoder_Least = (float)encoder- (float)Move_distance;                                  //速度滤波
-    Encoder *= 0.7;                                                            //一阶低通滤波器
-    Encoder += Encoder_Least*0.3;                                              //一阶低通滤波器
-    Encoder_Integral += Encoder - Move_distance;                             //积分出位移
-    Encoder_Integral = constrain_float(Encoder_Integral, -500, 500);        //积分限幅
-    Velocity = Encoder * P_Velocity_KP + Encoder_Integral * P_Velocity_KI;   //获取最终数值
-
-    if(Start_Flag==0) Encoder_Integral=0,Encoder=0,Velocity=0;               //停止时参数清零
-    return Velocity;
-}
+//    Encoder_Integral += Encoder - Move_distance;                             //积分出位移
+//    Encoder_Integral = constrain_float(Encoder_Integral, -500, 500);        //积分限幅
+//    Velocity = Encoder * P_Velocity_KP + Encoder_Integral * P_Velocity_KI;   //获取最终数值
+//
+//    if(Start_Flag==0) Encoder_Integral=0,Encoder=0,Velocity=0;               //停止时参数清零
+//    return Velocity;
+//}
 

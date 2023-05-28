@@ -20,7 +20,6 @@ uint8_t right_turn_count = 0;
 float line_bias = 0;
 float camera_slope = 0, camera_pixelError = 0;
 uint8_t weighted_mode = 0;
-uint8_t is_separate = 0;
 uint8_t is_gridline = 0;
 
 /**
@@ -46,8 +45,6 @@ uint8_t *tjrc_imageProc(const uint8_t *image_p)
     static line_info edge_line;
     static inflection_info inflections;
 
-    is_separate = 0;
-
     /* 第一步：二值化 */
     static uint8_t threshold_smooth = 30;
     uint8_t threshold = tjrc_binarization_otsu(image_p, IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -55,52 +52,40 @@ uint8_t *tjrc_imageProc(const uint8_t *image_p)
     threshold += threshold_bias;
     threshold_smooth = (uint8_t)(0.8 * threshold_smooth + 0.2 * threshold);
     tjrc_binarization_getBinImage(threshold_smooth, image_p, image_bin_p, IMAGE_WIDTH, IMAGE_HEIGHT);
-    /* 针对弱光环境或者反光强烈情况使用sobel算子 */
-    //    tjrc_sobel_autoThreshold(image_p, image_bin_p, IMAGE_WIDTH, IMAGE_HEIGHT);
 
-    /* 第二步：搜线，求拐点，补线 */
-    is_separate = check_separate(image_bin_p);
+    // 显示二值化后的图像
+    printf("%d,%d\n",threshold_smooth,IMAGE_WIDTH);
+
+
+    /* 第二步：搜线*/
     tjrc_imageProc_searchEdge_x(image_bin_p, &edge_line);
-    tjrc_imageProc_fineInflection(&edge_line, &inflections);
-    is_gridline = check_gridLine(image_bin_p);
-    extern float Pitch;
-    if(tjrc_abs(Pitch)<0.2f)
-    {
-        uint8_t patch_res = tjrc_imageProc_patchLine(&edge_line, &inflections);
-    }
-    //    printf("[patch]%d\r\n",patch_res);
+    
+    // /* 第三步：更新图像 */
+    // tjrc_imageProc_updateImage(image_bin_p, &edge_line, &inflections);
 
-    /* 第三步：更新图像 */
-    tjrc_imageProc_updateImage(image_bin_p, &edge_line, &inflections);
-
-    /* 第四步：将中线信息存储到全局变量在内核0调用 */
-    for (uint8_t i = IMAGE_HEIGHT - IMAGE_ROW_KEEPOUT_PIXEL; i >= IMAGE_HEIGHT - IMAGE_INTEREST_REGION; i--)
-    {
-        if (IMAGE_HEIGHT - edge_line.pixel_cnt > i)
-            continue;
-        /* 绘制中线 */
-        midline[i] = (edge_line.x_left[i] + edge_line.x_right[i]) / 2;
-    }
-    /* 如果当前线数小于10，则判断为丢线，不更新输出 */
-    if (edge_line.pixel_cnt > 10)
-    {
-        if (separate_flag == 1)
-        {
-            weighted_mode = WEIGHT_MODE_LOWER;
-        }
-        else
-        {
-            weighted_mode = WEIGHT_MODE_NORMOL;
-        }
-        /* 获得中线拟合斜率（正负90度）和中线二次加权平均偏移 */
-        camera_pixelError = weighted_line(midline, &edge_line, weighted_mode) + line_bias;
-        camera_slope = fit_slope(midline, &edge_line);
-    }
-
-//    char str2[40];
-//    sprintf(str2, "c:%f", camera_pixelError);
-//    tjrc_st7735_dispStr612(88, 146, (uint8_t *)str2, RGB565_GREEN);
-//    tjrc_st7735_dispStr612(88, 146, (uint8_t *)str2, RGB565_GREEN);
+    // /* 第四步：将中线信息存储到全局变量在内核0调用 */
+    // for (uint8_t i = IMAGE_HEIGHT - IMAGE_ROW_KEEPOUT_PIXEL; i >= IMAGE_HEIGHT - IMAGE_INTEREST_REGION; i--)
+    // {
+    //     if (IMAGE_HEIGHT - edge_line.pixel_cnt > i)
+    //         continue;
+    //     /* 绘制中线 */
+    //     midline[i] = (edge_line.x_left[i] + edge_line.x_right[i]) / 2;
+    // }
+    // /* 如果当前线数小于10，则判断为丢线，不更新输出 */
+    // if (edge_line.pixel_cnt > 10)
+    // {
+    //     if (separate_flag == 1)
+    //     {
+    //         weighted_mode = WEIGHT_MODE_LOWER;
+    //     }
+    //     else
+    //     {
+    //         weighted_mode = WEIGHT_MODE_NORMOL;
+    //     }
+    //     /* 获得中线拟合斜率（正负90度）和中线二次加权平均偏移 */
+    //     camera_pixelError = weighted_line(midline, &edge_line, weighted_mode) + line_bias;
+    //     camera_slope = fit_slope(midline, &edge_line);
+    // }
 
     return image_bin_p;
 }

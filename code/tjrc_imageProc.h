@@ -21,8 +21,8 @@
 /**
  * @brief 图像宽度与高度
  */
-#define IMAGE_WIDTH     120
-#define IMAGE_HEIGHT    80
+#define IMAGE_WIDTH     188
+#define IMAGE_HEIGHT    120
 
 
 /**
@@ -38,7 +38,7 @@
 #define IMAGE_INTEREST_REGION 73
 
 /**
- * @brief 图像颜色宏定义
+ * @brief 图像颜色宏定义v
  */
 #define IMAGE_COLOR_BLACK 0x00
 #define IMAGE_COLOR_WHITE 0xff

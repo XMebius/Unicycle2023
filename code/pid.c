@@ -45,16 +45,30 @@ void My_Pid_R_Init(void)
     R_Acc_Pid_Init(&Roll_acc_pid);
     R_Angle_Pid_Init(&Roll_angle_pid);
 }
-
+// 最内环响应速度最快，最外环响应速度最慢。角速度最内环，角度中间环，速度最外环
 float P_Cascade_Pid_Ctrl(float zhongzhi)
 {
-    PidLocCtrl(&Pitch_angle_pid,Pitch-zhongzhi,gyro_pitch);//角度环
+    static int16_t Pid_t;
+    Pid_t = Pid_t+5;
+    if(Pid_t % 20==0){
+        Pid_t = 0;
+        Encoder_C =encoder_get_count(ENCODER_3_QUADDEC);
+        PidLocCtrl(&Pitch_vel_pid, (Encoder_C*5/32)-Move_distance);
+    }
+
+    PidLocCtrl(&Pitch_angle_pid,Pitch_vel_pid.out-Pitch+zhongzhi);//速度环
     return Pitch_angle_pid.out;
 }
 
 float R_Cascade_Pid_Ctrl(float zhongzhi)
 {
-    PidLocCtrl(&Roll_angle_pid,Roll-zhongzhi, gyro_roll);//角度环
+    static int16_t Pid_t;
+    Pid_t = Pid_t+5;
+    if(Pid_t % 10 == 0){
+        Pid_t = 0;
+        PidLocCtrl(&Roll_angle_pid,Roll- zhongzhi);//角度环
+    }
+    PidLocCtrl(&Roll_acc_pid,Roll_acc_pid.out+gyro_roll);//角速度环
     return Roll_angle_pid.out;
 }
 
@@ -78,10 +92,10 @@ void R_Angle_Pid_Init(pid_param_t * pid)
 /*串级PID参数*/
 void P_Angle_Pid_Init(pid_param_t * pid)
 {
-    pid->kp        = 2350;//>3500
+    pid->kp        = 2350;
     pid->ki        = 0.0;
     pid->kd        = 0;
-    pid->imax      = 30;
+    pid->imax      = 160;
 
     pid->out_p     = 0;
     pid->out_i     = 0;
@@ -172,7 +186,7 @@ void PidInit(pid_param_t * pid)
   * @param    pid     pid参数
   * @param    error   pid输入误差
   */
-float PidLocCtrl(pid_param_t* pid,float error,float dot_error)
+float PidLocCtrl(pid_param_t* pid,float error)
 {
     /* 累积误差 */
     pid->integrator += error;
@@ -183,7 +197,9 @@ float PidLocCtrl(pid_param_t* pid,float error,float dot_error)
 
     pid->out_p = pid->kp * error;
     pid->out_i = pid->ki * pid->integrator;
-    pid->out_d = pid->kd * dot_error;
+    pid->out_d = pid->kd * (error - pid->last_error);
+
+    pid->last_error = error;
 
     pid->out = pid->out_p + pid->out_i + pid->out_d;
 

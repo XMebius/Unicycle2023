@@ -47,6 +47,8 @@ void cpu0_device_init()
     My_Pid_P_Init();
     My_Pid_R_Init();
 #endif
+
+
 }
 
 
@@ -57,6 +59,7 @@ int core0_main(void)
     cpu0_device_init();
     cpu_wait_event_ready();         // 等待所有核心初始化完毕
 	while (TRUE) {
+
 	}
 }
 

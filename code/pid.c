@@ -54,9 +54,10 @@ float P_Cascade_Pid_Ctrl(float zhongzhi)
 {
     static int16_t Pid_t;
     Pid_t = Pid_t+5;
-    if(Pid_t % 30==0){
+    if(Pid_t % 45==0){
         Pid_t = 0;
         Encoder_C =encoder_get_count(ENCODER_3_QUADDEC);
+//        printf("%hd\n",Encoder_C);
 
         static float Encoder_P;
         float Encoder_Least = (float)Encoder_C- (float)P_Move_distance;                                  //速度滤波
@@ -65,6 +66,7 @@ float P_Cascade_Pid_Ctrl(float zhongzhi)
 
         float error=(Encoder_P/32.0)-P_Move_distance;
         PidLocCtrl(&Pitch_vel_pid, error,error-Pitch_vel_pid.last_error);
+
         Pitch_vel_pid.last_error=error;
     }
 
@@ -99,7 +101,7 @@ float R_Cascade_Pid_Ctrl(float zhongzhi)
     R_Zero_Bias+=Roll_vel_pid.out;
 
     PidLocCtrl(&Roll_angle_pid,Roll- zhongzhi-R_Zero_Bias,gyro_roll);//  角度环
-    printf("%f,%f\n",R_Zero_Bias+zhongzhi,Roll);
+//    printf("%f,%f\n",R_Zero_Bias+zhongzhi,Roll);
     return Roll_angle_pid.out;
 
 }
@@ -124,9 +126,9 @@ void R_Angle_Pid_Init(pid_param_t * pid)
 /*串级PID参数*/
 void P_Angle_Pid_Init(pid_param_t * pid)
 {
-    pid->kp        = 2250;
+    pid->kp        = 1550/*2250*/;
     pid->ki        = 0.0;
-    pid->kd        = 40;
+    pid->kd        = 10;
     pid->imax      = 30;
 
     pid->out_p     = 0;
@@ -160,9 +162,9 @@ void P_Acc_Pid_Init(pid_param_t * pid)
 /*串级PID参数*/
 void P_Vel_Pid_Init(pid_param_t * pid)
 {
-    pid->kp        = 0.0003/*0.047*/;
+    pid->kp        = -0.0001/*0.0005*/;//当kp有值的时候，振荡幅度越来越小，到后面直接稳定的往前走了
     pid->ki        = 0.0;
-    pid->kd        = 0/*0.005*/;
+    pid->kd        = -0.022/*-0.025~-0.0018*/;
     pid->imax      = 0.0;
     pid->out_p     = 0;
     pid->out_i     = 0;
@@ -177,9 +179,9 @@ void P_Vel_Pid_Init(pid_param_t * pid)
 /*串级PID参数*/
 void R_Vel_Pid_Init(pid_param_t * pid)
 {
-    pid->kp        = 0.0/*0.00240 <0.00245 >0.0018*/;
-    pid->ki        = 0.00001;
-    pid->kd        = 1;
+    pid->kp        = 0.0000001/*0.00240 <0.00245 >0.0018*/;
+    pid->ki        = 0.0;
+    pid->kd        = 0.35;
     pid->imax      = 2600;
     pid->out_p     = 0;
     pid->out_i     = 0;

@@ -23,7 +23,7 @@ float Velocity_Control_C(int encoder);
 float constrain_float(float num, float min, float max);
 short constrain_short(short num, short min, short max);
 
-int Start_Flag=3;                    //启动标志
+int Start_Flag=0;                    //启动标志
 // unsigned char  show_flag=0;                     //显示标志
 
 // Status_car status_car = idle;                   //小车状态 一开始为空闲状态
@@ -45,7 +45,7 @@ int PWM_R=0,PWM_Y=0,PWMA_accel,PWMB_accel,PWMC_accel;                       //PW
 
 //静置后  Pitch_Zero=1.35  不静置 Pitch_Zero=3.82
 float Roll_Zero=0.03/*0.15~0.2*//*0.094850~0.094860*//*, Roll_Zero1=5.63*/;       //面前，远离陀螺仪位置，往前Roll变小，往后roll变大
-float Pitch_Zero=-1.652/*-0.265*//*2.050~2.095*//*,Pitch_Zero1=5.63*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
+float Pitch_Zero=-0.56/*-0.55~-0.75*/;     // 面前，远离陀螺仪放置，往左偏零点小，往右越大
 //float Roll_Zero=0.0038, Roll_Zero1=5.63;      //Roll_Zero1：记录值，龙邱的代码中Roll_Zero=-3,3,往陀螺仪方向倾斜是负数，反之为正数
 //float Pitch_Zero=-0.024,Pitch_Zero1=5.63;     //Pitch_Zero1:
 float Yaw_Zero=0.0;                     //XY轴角度零点，与机械有关，影响稳定性
@@ -70,7 +70,7 @@ float P_Velocity_KP=0/*-0.287*//*2.287*/,P_Velocity_KI=0/*-0.05*/;              
 
 float Yaw_control_1,Yaw_control_2 = 0;
 float Yaw_mark;
-int P_Move_distance=0 , R_Move_distance = 0/*, Move_distance_MAX=10*/;
+int P_Move_distance=100 , R_Move_distance = 0/*, Move_distance_MAX=10*/;
 
 float Pitch=0.0f,Roll=0.0f,Yaw=0.0f,Pitch_temp=0.0f,Roll_temp=0.0f,Yaw_temp=0.0f;    //经过卡尔曼滤波后的姿态信息
 float gyro_yaw=0.0f,gyro_pitch=0.0f,gyro_roll=0.0f,gyro_yaw_temp=0.0f,gyro_pitch_temp=0.0f,gyro_roll_temp=0.0f;
@@ -163,6 +163,7 @@ void Balance(void)
     encoder_clear_count(ENCODER_1_QUADDEC);
     encoder_clear_count(ENCODER_2_QUADDEC);
     encoder_clear_count(ENCODER_3_QUADDEC);
+
 }
 /**************************************************************************
 X轴平衡PID控制,角度环

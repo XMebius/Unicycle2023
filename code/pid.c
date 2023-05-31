@@ -162,9 +162,9 @@ void P_Acc_Pid_Init(pid_param_t * pid)
 /*串级PID参数*/
 void P_Vel_Pid_Init(pid_param_t * pid)
 {
-    pid->kp        = -0.0001/*0.0005*/;//当kp有值的时候，振荡幅度越来越小，到后面直接稳定的往前走了
+    pid->kp        = 0.0/*-0.0001*//*0.0005*/;//当kp有值的时候，振荡幅度越来越小，到后面直接稳定的往前走了
     pid->ki        = 0.0;
-    pid->kd        = -0.022/*-0.025~-0.0018*/;
+    pid->kd        = 0.0/*-0.022*//*-0.025~-0.0018*/;
     pid->imax      = 0.0;
     pid->out_p     = 0;
     pid->out_i     = 0;

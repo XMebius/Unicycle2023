@@ -25,7 +25,7 @@ void core1_main(void)
     cpu1_device_init();
 
     tft180_init();
-    icm20602_init();
+//    icm20602_init();
 
 
     cpu_wait_event_ready();

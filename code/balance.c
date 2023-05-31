@@ -23,7 +23,7 @@ float Velocity_Control_C(int encoder);
 float constrain_float(float num, float min, float max);
 short constrain_short(short num, short min, short max);
 
-int Start_Flag=0;                    //启动标志
+int Start_Flag=3;                    //启动标志
 // unsigned char  show_flag=0;                     //显示标志
 
 // Status_car status_car = idle;                   //小车状态 一开始为空闲状态

@@ -24,15 +24,8 @@ void cpu0_device_init()
     encoder_quad_init(ENCODER_2_QUADDEC, ENCODER_2_QUADDEC_A, ENCODER_2_QUADDEC_B);
     encoder_quad_init(ENCODER_3_QUADDEC, ENCODER_3_QUADDEC_A, ENCODER_3_QUADDEC_B);
 
-//    tft180_init();
-//
-//    /*初始化陀螺仪*/
-//    if(icm20602_init()){
-//        printf("1");
-//    }
-//    else{
-//        printf("2");
-//    }
+    /*初始化陀螺仪*/
+    icm20602_init();
 
     /*初始化无线串口通信*/
     wireless_uart_init();
@@ -63,7 +56,7 @@ int core0_main(void)
 {
     clock_init();                   // 获取时钟频率
     debug_init();                   // 初始化默认调试串口
-//    cpu0_device_init();
+    cpu0_device_init();
     cpu_wait_event_ready();         // 等待所有核心初始化完毕
 	while (TRUE) {
 //	    MotorCtrl3W(8000,8000,2000);

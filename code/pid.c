@@ -126,7 +126,7 @@ void R_Angle_Pid_Init(pid_param_t * pid)
 /*´®¼¶PID²ÎÊý*/
 void P_Angle_Pid_Init(pid_param_t * pid)
 {
-    pid->kp        = 1550/*2250*/;
+    pid->kp        = 1750/*2250*/;
     pid->ki        = 0.0;
     pid->kd        = 10;
     pid->imax      = 30;
